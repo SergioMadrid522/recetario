@@ -1,0 +1,22 @@
+@use "./components/Header/header";
+@use "./components/Main/main";
+@use "./components/Footer/footer";
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    //outline: 1px solid red;
+}
+
+a { 
+    text-decoration: none;
+    color: #333;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    width: 50px;
+}

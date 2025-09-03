@@ -1,11 +1,11 @@
 import Content from "./Content";
-import Filter from "./Filter";
+//import Filter from "./Filter";
 
 function Main() {
     return (
         <main>
-            <h1>Recetario de Glenda</h1>
-            <Filter/>
+            
+            {/* <Filter/> */}
             <Content/>
         </main>
     );

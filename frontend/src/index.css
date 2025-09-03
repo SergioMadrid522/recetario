@@ -1,17 +1,26 @@
 @font-face {
   font-family: "Olivia";
-  src: url("/frontend/public/fonts/Olivia.woff2") format("woff2");
+  src: url("/fonts/Olivia.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "BrittanySignature";
-  src: url("/frontend/public/fonts/BrittanySignature.woff2") format("woff2");
+  src: url("/fonts/BrittanySignature.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "Monserrat";
+  src: url("/fonts/Monserrat.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
-    --olivia: "Olivia", sans-serif
+    --Olivia: "Olivia", sans-serif;
     --Brittany: "BrittanySignature", sans-serif;
+    --Monserrat: "Monserrat", sans-serif;
 }
