@@ -1,0 +1,86 @@
+footer {
+    border-top: 1px solid gainsboro;
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    color: #333;
+    font-family: var(--Monserrat);
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 30px;
+        text-align: left;
+        > div {
+            flex: 1 1 220px;
+            min-width: 220px;
+        }
+        h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 1.6rem;
+            margin-bottom: 0.6em;
+            color: #033E72;
+        }
+        p, ul {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #555;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            li {
+                margin: 8px 0;
+            }
+            a {
+                color: #033E72;
+                font-weight: 600;
+                position: relative;
+                padding-bottom: 3px;
+                transition: color 0.3s ease;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 0;
+                    height: 2px;
+                    background-color: #033E72;
+                    transition: width 0.3s ease;
+                }
+                &:hover {
+                    color: #f8b500;
+                    &::before {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .section_about {
+            width: 500px;
+            
+            
+        }
+        .section_about__quote {
+            font-style: italic;
+            margin-top: 1em;
+            color: #777;
+            border-left: 4px solid #f8b500;
+            padding-left: 10px;
+        }
+        .section-rights {
+            text-align: center;
+            flex-basis: 100%;
+            margin-top: 30px;
+            font-size: 13px;
+            color: #777;
+        }
+    }
+    .first-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin: 0 auto;
+    }
+}

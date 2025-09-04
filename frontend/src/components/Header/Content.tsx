@@ -15,9 +15,7 @@ function Content() {
                 </a>
                 <SearchModal/>
             </div>
-            <div className="logo-wrapper">
-                <Logo/>
-            </div>
+            <Logo/>
         </>
     );
 }
@@ -26,8 +24,7 @@ function Logo() {
     return (
         <div className="logo-container">
             <a href="" className="logo-link">
-                <span className="logo__brand">Glenda </span>
-                <span className="logo__title">Recetario</span>
+                <span className="logo-link__brand">Glenda Recetario</span>
             </a>
         </div>
     );
