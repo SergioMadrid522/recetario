@@ -25,8 +25,8 @@ function Sections() {
         <div className="section-menu">
             <h3>Menú</h3>
             <ul className="section-menu__list">
-                <li><a href="">Inicio</a></li>
-                <li><a href="">Platillos</a></li>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="">Subir platillo</a></li>
             </ul>
         </div>
     );

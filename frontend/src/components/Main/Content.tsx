@@ -5,8 +5,9 @@ function Content() {
     return (
         <>
             <h2 
-            className="menu-title">
-                Recetas del momento
+            className="menu-title"
+            id="inicio">
+                Los platillos más preparados
             </h2>
             <div className="dish-wrap">
                 <RenderDish/>
