@@ -7,7 +7,7 @@ import Main from './components/Main/Main';
 import Footer from './components/Footer/Footer';
 
 /* Routes */
-import SubirPlatillo from "./admin/components/SubirPlatillo";
+import SubirPlatillo from "./admin/components/SubirPlatillo/SubirPlatillo";
 
 function App() {
   return (

@@ -43,7 +43,6 @@ function Sections() {
                 </li>
             </ul>
         </div>
-        
     );
 }
 
