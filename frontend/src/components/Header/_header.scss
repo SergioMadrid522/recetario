@@ -36,6 +36,7 @@ header {
                         transition: color 0.3s ease;
                     }
                 }
+
             }
         .search-wrap {
             display: flex;
@@ -57,6 +58,10 @@ header {
                     fill: #555;
                 }
             }
+        }
+        &.onlyLogo {
+            justify-content: center;
+            border-bottom: none;
         }
     }
 }
@@ -90,6 +95,9 @@ header {
         li {
             margin: 0 auto;
         }
+    }
+    &.deactiveCategories {
+        
     }
 }
 
@@ -225,4 +233,3 @@ header {
     visibility: visible;
     opacity: 1;
 }
-

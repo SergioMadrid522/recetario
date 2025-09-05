@@ -1,3 +1,5 @@
+import { NavLink } from 'react-router-dom';
+
 function Content() {
     return (
         <div className="footer-content">
@@ -26,9 +28,22 @@ function Sections() {
             <h3>Menú</h3>
             <ul className="section-menu__list">
                 <li><a href="#inicio">Inicio</a></li>
-                <li><a href="">Subir platillo</a></li>
+                <li><NavLink 
+                    to="/subir-platillo"
+                    className={({ isActive }) => isActive ? "uploadDish" : ""}
+                    >
+                    Subir platillo
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink 
+                    to="/recetario">
+                        Recetario
+                    </NavLink>
+                </li>
             </ul>
         </div>
+        
     );
 }
 

@@ -4,7 +4,6 @@ import Content from "./Content";
 function Main() {
     return (
         <main>
-            
             {/* <Filter/> */}
             <Content/>
         </main>

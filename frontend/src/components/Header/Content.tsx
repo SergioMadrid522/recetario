@@ -1,13 +1,9 @@
 /* import type { Dish } from "../Main/type.ts";
-
 import { dishes } from "../Main/data.ts"; */
+import type { searchModalProps } from "./type.ts";
+
+import { useLocation } from "react-router-dom";
 import { useState } from "react";
-
-
-type searchModalProps = {
-    open: boolean;
-    setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
-}
 
 /* type filteredProducts = {
     products: Dish[];
@@ -19,9 +15,11 @@ function Content() {
         e.preventDefault();
         setOpenModal(!openModal)
     };
-
+    const location = useLocation();
+    const hideSearch = location.pathname === "/subir-platillo";
     return (
         <>  
+        {!hideSearch && (
             <div className="search-wrap">
                 <a className="search-wrap__open-modal" href="#" onClick={handleOpenModal}>
                     <span className="search-icon">
@@ -39,6 +37,7 @@ function Content() {
                 setOpenModal={setOpenModal}
                 />
             </div>
+            )}
             <Logo/>
         </>
     );

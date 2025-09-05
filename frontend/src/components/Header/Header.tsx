@@ -1,18 +1,23 @@
+import { useLocation } from "react-router-dom";
 import { categories } from "./data.ts";
 //import banner from "../../assets/pictures/banner.webp";
 
 import Content from "./Content.tsx";
 import Category from "./Categories.tsx";
 function Header() {
+    const location = useLocation();
+    const onlyLogo = location.pathname === "/subir-platillo";
     return (
         <>
             <header>
-                <nav>
+                <nav className={onlyLogo ? 'onlyLogo': ''}>
                     <Content/>
                 </nav>
-                <div className="categories-container">
+                {!onlyLogo && (
+                <div className='categories-container'>
                     <Category category={categories}/>
                 </div>
+                )}
             </header>
             {/* <div className="banner">
                 <img 

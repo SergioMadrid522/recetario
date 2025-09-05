@@ -60,6 +60,10 @@ header nav .search-wrap__open-modal .search-icon {
   width: 19px;
   fill: #555;
 }
+header nav.onlyLogo {
+  justify-content: center;
+  border-bottom: none;
+}
 
 .category-list {
   display: flex;
@@ -91,7 +95,6 @@ header nav .search-wrap__open-modal .search-icon {
 .category-list a li {
   margin: 0 auto;
 }
-
 /* .banner {
     width: 100%;
     height: clamp(300px, 70vh, 600px);

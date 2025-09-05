@@ -1,17 +1,33 @@
-import Main from './components/Main/Main'
-import Header from './components/Header/Header'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import './App.css'
-import Footer from './components/Footer/Footer'
+
+import Header from './components/Header/Header';
+import Main from './components/Main/Main';
+import Footer from './components/Footer/Footer';
+
+/* Routes */
+import SubirPlatillo from "./admin/components/SubirPlatillo";
 
 function App() {
   return (
+    <Router>
+      <AppContent/>
+    </Router>
+  )
+}
+
+function AppContent() {
+  return (
     <>
-      <Header/>
-      <Main/>
+        <Header/>
+        <Routes>
+          <Route path="/" element={<Main/>} />
+          <Route path="/recetario" element={<Main/>} />
+          <Route path="/subir-platillo" element={<SubirPlatillo/>} />
+        </Routes>
       <Footer/>
     </>
   )
 }
-
-export default App
+export default App;
