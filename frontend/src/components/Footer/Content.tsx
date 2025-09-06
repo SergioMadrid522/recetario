@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 function Content() {
     return (
@@ -23,29 +23,50 @@ function About() {
 }
 
 function Sections() {
+    
     return (
         <div className="section-menu">
             <h3>Menú</h3>
             <ul className="section-menu__list">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><NavLink 
+                <MenuContent/>
+            </ul>
+        </div>
+    );
+}
+
+function MenuContent() {
+    const location = useLocation();
+    const hideUploadDish = location.pathname === "/subir-platillo";
+    const hideRecipeBook = location.pathname === "/recetario";
+
+    return (
+        <>
+            {hideRecipeBook && (
+                    <li>
+                        <a href="#inicio">Inicio</a>
+                    </li>
+            )}
+            {hideRecipeBook && (
+                <li>
+                    <NavLink 
                     to="/subir-platillo"
                     className={({ isActive }) => isActive ? "uploadDish" : ""}
                     >
-                    Subir platillo
+                        Subir platillo
                     </NavLink>
                 </li>
+            )}
+            {hideUploadDish && (
                 <li>
                     <NavLink 
                     to="/recetario">
                         Recetario
                     </NavLink>
                 </li>
-            </ul>
-        </div>
+            )}
+        </>
     );
 }
-
 function Rights() {
     return (
         <div className="section-rights">

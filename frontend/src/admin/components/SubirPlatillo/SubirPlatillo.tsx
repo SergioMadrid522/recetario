@@ -95,4 +95,5 @@ function UploadDish() {
         </div>
     );
 }
+
 export default SubirPlatillo;
