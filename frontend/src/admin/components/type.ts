@@ -1,4 +1,4 @@
 export type option = {
     link: string;
-    option: string;
+    optionName: string;
 }

@@ -36,37 +36,36 @@ function Sections() {
 
 function MenuContent() {
     const location = useLocation();
-    const hideUploadDish = location.pathname === "/subir-platillo";
-    const hideRecipeBook = location.pathname === "/recetario";
+    const uploadDish = location.pathname === "/admin/subir-platillo";
+    const recipeBook = location.pathname === "/recetario";
 
     return (
         <>
-            {hideRecipeBook && (
-                    <li>
-                        <a href="#inicio">Inicio</a>
-                    </li>
-            )}
-            {hideRecipeBook && (
+            <li>
+                <a href="#inicio">Inicio</a>
+            </li>
+            {!uploadDish && (
                 <li>
                     <NavLink 
-                    to="/subir-platillo"
-                    className={({ isActive }) => isActive ? "uploadDish" : ""}
+                    to="/admin/subir-platillo"
                     >
                         Subir platillo
                     </NavLink>
                 </li>
             )}
-            {hideUploadDish && (
+            {!recipeBook && (
                 <li>
                     <NavLink 
-                    to="/recetario">
+                    to="/recetario"
+                    >
                         Recetario
                     </NavLink>
                 </li>
-            )}
+            )} 
         </>
     );
 }
+
 function Rights() {
     return (
         <div className="section-rights">

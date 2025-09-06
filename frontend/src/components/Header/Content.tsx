@@ -10,16 +10,19 @@ import { useState } from "react";
 } */
 
 function Content() {
+    const location = useLocation();
+    const hideSearchUploadDish = location.pathname === "/admin/subir-platillo";
+    const hideSearchHome = location.pathname === "/admin/home";
+
     const [openModal, setOpenModal] = useState(false);
     const handleOpenModal = (e: React.MouseEvent<HTMLAnchorElement>) => {
         e.preventDefault();
         setOpenModal(!openModal)
     };
-    const location = useLocation();
-    const hideSearch = location.pathname === "/subir-platillo";
+    
     return (
         <>  
-        {!hideSearch && (
+        {!hideSearchUploadDish && !hideSearchHome && (
             <div className="search-wrap">
                 <a className="search-wrap__open-modal" href="#" onClick={handleOpenModal}>
                     <span className="search-icon">

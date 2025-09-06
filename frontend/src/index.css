@@ -13,8 +13,8 @@
 }
 
 @font-face {
-  font-family: "Monserrat";
-  src: url("/fonts/Monserrat.woff2") format("woff2");
+  font-family: "Montserrat-Regular";
+  src: url("/fonts/Montserrat-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
@@ -22,5 +22,5 @@
 :root {
     --Olivia: "Olivia", sans-serif;
     --Brittany: "BrittanySignature", sans-serif;
-    --Monserrat: "Monserrat", sans-serif;
+    --Montserrat-Regular: "Montserrat-Regular", sans-serif;
 }

@@ -2,9 +2,9 @@
 
 header {
     background-color: #fff;
+    border-bottom: 1px solid gainsboro;
     position: sticky;
     top: 0;
-    border-bottom: 1px solid gainsboro;
     z-index: 1000;
     nav {
         border-bottom: 1px solid gainsboro;
@@ -41,7 +41,7 @@ header {
         .search-wrap {
             display: flex;
             align-items: center;
-            font-family: var(--Monserrat);
+            font-family: "Montserrat", sans-serif;
             font-weight: 300;
             &__open-modal {
                 color: rgb(46, 45, 45);
@@ -72,7 +72,7 @@ header {
     align-items: center;
     justify-content: center;
     gap: 30px;
-    font-family: var(--Monserrat);
+    font-family: "Montserrat", sans-serif;
     font-size: 13.6px;
     a {
         padding: 1em 0;
@@ -178,7 +178,7 @@ header {
                 color: rgb(110, 110, 110);
                 border: none;
                 border-radius: 6px;
-                font-family: var(--Monserrat);
+                font-family: "Montserrat", sans-serif;
                 font-size: 15px;
                 padding: 1em;
                 width: 100%;

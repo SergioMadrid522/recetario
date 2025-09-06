@@ -2,9 +2,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 header {
   background-color: #fff;
+  border-bottom: 1px solid gainsboro;
   position: sticky;
   top: 0;
-  border-bottom: 1px solid gainsboro;
   z-index: 1000;
 }
 header nav {
@@ -42,7 +42,7 @@ header nav .logo-container .logo-link:hover {
 header nav .search-wrap {
   display: flex;
   align-items: center;
-  font-family: var(--Monserrat);
+  font-family: "Montserrat", sans-serif;
   font-weight: 300;
 }
 header nav .search-wrap__open-modal {
@@ -71,7 +71,7 @@ header nav.onlyLogo {
   align-items: center;
   justify-content: center;
   gap: 30px;
-  font-family: var(--Monserrat);
+  font-family: "Montserrat", sans-serif;
   font-size: 13.6px;
 }
 .category-list a {
@@ -174,7 +174,7 @@ header nav.onlyLogo {
   color: rgb(110, 110, 110);
   border: none;
   border-radius: 6px;
-  font-family: var(--Monserrat);
+  font-family: "Montserrat", sans-serif;
   font-size: 15px;
   padding: 1em;
   width: 100%;
@@ -279,7 +279,7 @@ header nav.onlyLogo {
      object-position: center;
 }
 .dish-wrap .dish-container__title {
-  font-family: var(--Monserrat);
+  font-family: "Montserrat", sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
   color: #033E72;
@@ -294,7 +294,7 @@ header nav.onlyLogo {
   color: #f8b500;
 }
 .dish-wrap .dish-container__description {
-  font-family: var(--Monserrat);
+  font-family: "Montserrat", sans-serif;
   font-size: 0.9rem;
   color: #555;
   padding: 0 1em 1em;
@@ -306,7 +306,7 @@ footer {
   background-color: #f9f9f9;
   padding: 40px 20px;
   color: #333;
-  font-family: var(--Monserrat);
+  font-family: "Montserrat", sans-serif;
 }
 footer .footer-content {
   max-width: 1200px;

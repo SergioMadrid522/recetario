@@ -8,6 +8,8 @@ import Footer from './components/Footer/Footer';
 
 /* Routes */
 import SubirPlatillo from "./admin/components/SubirPlatillo/SubirPlatillo";
+import Home from "./admin/components/Home/Home";
+import AdminLayout from './admin/components/Admin-Layout/AdminLayout';
 
 function App() {
   return (
@@ -24,7 +26,12 @@ function AppContent() {
         <Routes>
           <Route path="/" element={<Main/>} />
           <Route path="/recetario" element={<Main/>} />
-          <Route path="/subir-platillo" element={<SubirPlatillo/>} />
+
+          <Route path='/admin' element={<AdminLayout/>}>
+            <Route path="subir-platillo" element={<SubirPlatillo/>} />
+            <Route path='Home' element={<Home/>}></Route>
+          </Route>
+
         </Routes>
       <Footer/>
     </>

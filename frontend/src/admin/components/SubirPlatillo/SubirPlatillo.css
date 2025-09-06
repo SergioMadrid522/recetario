@@ -1,0 +1,121 @@
+.upload-dish-menu {
+  display: grid;
+  grid-template-columns: 0.24fr auto;
+}
+.upload-dish-menu .side-menu {
+  background-color: #fff;
+  border-right: 1px solid gainsboro;
+  padding: 1.3em 1.2em;
+}
+.upload-dish-menu .side-menu__option-container {
+  border: 1px solid gainsboro;
+  border-radius: 6px;
+  position: relative;
+  margin-top: 15px;
+}
+.upload-dish-menu .side-menu__option-container:first-of-type {
+  margin-top: 10px;
+}
+.upload-dish-menu .side-menu__option-container .option {
+  display: inline-block;
+  font-family: var(--Montserrat-Regular);
+  color: #777;
+  padding: 0.5em 1em;
+  font-size: 14.5px;
+  transition: font-weight 0.25s ease;
+}
+.upload-dish-menu .side-menu__option-container .option::before {
+  content: "";
+  position: absolute;
+  background-color: rgba(3, 62, 114, 0.1607843137);
+  width: 0;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  transition: all 0.7s ease;
+}
+.upload-dish-menu .side-menu__option-container .option:hover {
+  color: #000;
+  font-weight: 600;
+}
+.upload-dish-menu .side-menu__option-container .option:hover::before {
+  border-radius: 6px;
+  width: 100%;
+}
+.upload-dish-menu .main-wapper {
+  padding: 1.3em 1.2em;
+  width: 70%;
+  margin: 0 auto;
+}
+.upload-dish-menu .main-wapper form {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: auto;
+  margin-top: 1em;
+}
+.upload-dish-menu .main-wapper form input[type=text],
+.upload-dish-menu .main-wapper form textarea {
+  border: 1px solid gainsboro;
+  border-radius: 6px;
+  font-family: var(--Montserrat-Regular);
+  font-size: 0.9em;
+  padding: 0.5em;
+}
+.upload-dish-menu .main-wapper form input[type=text]:focus,
+.upload-dish-menu .main-wapper form textarea:focus {
+  outline: none;
+}
+.upload-dish-menu .main-wapper form textarea {
+  height: 13em;
+  resize: none;
+}
+.upload-dish-menu .main-wapper form textarea:last-of-type {
+  height: 23em;
+}
+.upload-dish-menu .main-wapper form .file-category {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.upload-dish-menu .main-wapper form .file-category input[type=file] {
+  cursor: pointer;
+  overflow: hidden;
+  width: 300px;
+}
+.upload-dish-menu .main-wapper form .file-category select {
+  border: none;
+  padding: 0.5em;
+  border-radius: 6px;
+}
+.upload-dish-menu .main-wapper form .file-category select option {
+  border: none;
+  text-align: center;
+}
+.upload-dish-menu .main-wapper form .submit-button {
+  text-align: center;
+}
+.upload-dish-menu .main-wapper form .submit-button button[type=submit] {
+  background-color: rgba(210, 210, 210, 0.792);
+  border: none;
+  border-radius: 6px;
+  color: #4b4b4b;
+  cursor: pointer;
+  font-family: var(--Montserrat-Regular);
+  font-size: 0.85em;
+  font-weight: 500;
+  padding: 0.8em;
+  width: 200px;
+  transition: all 0.3s ease;
+}
+.upload-dish-menu .main-wapper form .submit-button button[type=submit]:hover {
+  background-color: rgba(199, 199, 199, 0.99);
+  color: #333;
+}
+
+.main-titles {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  scroll-margin-top: 100dvh;
+}/*# sourceMappingURL=SubirPlatillo.css.map */

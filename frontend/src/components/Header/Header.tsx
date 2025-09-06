@@ -1,22 +1,25 @@
 import { useLocation } from "react-router-dom";
 import { categories } from "./data.ts";
-//import banner from "../../assets/pictures/banner.webp";
 
 import Content from "./Content.tsx";
 import Category from "./Categories.tsx";
+
+//import banner from "../../assets/pictures/banner.webp";
+
 function Header() {
     const location = useLocation();
-    const onlyLogo = location.pathname === "/subir-platillo";
+    const hideCategoryUploadDish = location.pathname === "/admin/subir-platillo";
+    const hideCategoryHome = location.pathname === "/admin/Home";
     return (
         <>
             <header>
-                <nav className={onlyLogo ? 'onlyLogo': ''}>
+                <nav className={hideCategoryUploadDish ? 'onlyLogo': ''}>
                     <Content/>
                 </nav>
-                {!onlyLogo && (
-                <div className='categories-container'>
-                    <Category category={categories}/>
-                </div>
+                {!hideCategoryUploadDish && hideCategoryHome && (
+                    <div className='categories-container'>
+                        <Category category={categories}/>
+                    </div>
                 )}
             </header>
             {/* <div className="banner">

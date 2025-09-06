@@ -2,8 +2,12 @@ import type { option } from "./type.ts"
 
 export const sideMenuOptions: option[] = [
     {
-        link: "",
-        option: "Home"
+        link: "admin/home",
+        optionName: "Home"
+    },
+    {
+        link: "admin/subir-platillo",
+        optionName: "Subir Platillo"
     }
 ]
 

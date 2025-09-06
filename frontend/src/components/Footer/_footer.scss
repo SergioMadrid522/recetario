@@ -3,7 +3,7 @@ footer {
     background-color: #f9f9f9;
     padding: 40px 20px;
     color: #333;
-    font-family: var(--Monserrat);
+    font-family: "Montserrat", sans-serif;
     .footer-content {
         max-width: 1200px;
         margin: 0 auto;
@@ -59,8 +59,6 @@ footer {
         }
         .section_about {
             width: 500px;
-            
-            
         }
         .section_about__quote {
             font-style: italic;
