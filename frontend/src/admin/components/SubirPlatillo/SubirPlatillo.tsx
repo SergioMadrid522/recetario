@@ -28,7 +28,7 @@ function SideMenu() {
                     <div className="side-menu__option-container" key={idx}>
                         <NavLink to={`/${option.link}`} className="option">{option.optionName}</NavLink>
                     </div>
-                ))}                
+                ))}
             </aside>  
         </>
     );

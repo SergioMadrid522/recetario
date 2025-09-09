@@ -1,58 +1,67 @@
+import type { Dish } from "./type.ts";
+
 import hamburgesa from "../../assets/pictures/hamburgesa.webp";
 import horchata from "../../assets/pictures/Horchata.webp";
 import tacosPastor from "../../assets/pictures/Tacos-al-pastor.webp";
-
-import type { Dish } from "./type.ts";
+import tortillasMaiz from "../../assets/pictures/tortillas-de-maiz.webp";
+import flan from "../../assets/pictures/flan.webp";
 
 export const dishes:Dish[] = [
   {
     nombre: "Agua de Horchata",
     description: "Refrescante bebida mexicana hecha a base de arroz, canela y leche.",
     link: "#",
-    img: hamburgesa,
+    img: horchata,
+    category: "Bebida",
   },
   {
     nombre: "Tacos al Pastor",
     description: "Tortillas de maíz rellenas con carne de cerdo marinada en achiote y piña.",
     link: "#",
-    img: horchata,
+    img: tacosPastor,
+    category: "Platos fuertes",
   },
   {
     nombre: "Tortillas de Maíz",
     description: "Base de la cocina mexicana, hechas con masa de maíz nixtamalizado.",
     link: "#",
-    img: tacosPastor,
-
+    img: tortillasMaiz,
+    category: "Tortillas",
   },
     {
-    nombre: "Agua de Horchata",
+    nombre: "Flan",
     description: "Refrescante bebida mexicana hecha a base de arroz, canela y leche.",
     link: "#",
-    img: hamburgesa,
+    img: flan,
+    category: "Postre"
   },
   {
     nombre: "Tacos al Pastor",
     description: "Tortillas de maíz rellenas con carne de cerdo marinada en achiote y piña.",
     link: "#",
-    img: horchata,
+    img: tacosPastor,
+    category: "Platillo fuerte",
   },
   {
-    nombre: "Tortillas de Maíz",
+    nombre: "Hamburgesa",
     description: "Base de la cocina mexicana, hechas con masa de maíz nixtamalizado.",
     link: "#",
-    img: tacosPastor,
+    img: hamburgesa,
+    category: "Comida rápida",
 
   },
     {
-    nombre: "Agua de Horchata",
+    nombre: "Tortillas de Maíz",
     description: "Refrescante bebida mexicana hecha a base de arroz, canela y leche.",
     link: "#",
-    img: hamburgesa,
+    img: tortillasMaiz,
+    category: "Tortillas",
   },
   {
     nombre: "Tacos al Pastor",
     description: "Tortillas de maíz rellenas con carne de cerdo marinada en achiote y piña.",
     link: "#",
-    img: horchata,
+    img: tacosPastor,
+    category: "Platillo fuerte",
   },
 ];

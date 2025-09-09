@@ -3,5 +3,6 @@ export type Dish = {
     description: string;
     link: string;
     img: string;
+    category: string;
 }
 

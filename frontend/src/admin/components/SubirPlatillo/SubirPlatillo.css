@@ -4,72 +4,104 @@
 }
 .upload-dish-menu .side-menu {
   background-color: #fff;
-  border-right: 1px solid gainsboro;
-  padding: 1.3em 1.2em;
+  border-right: 1px solid #ddd;
+  padding: 1.5em 1.2em;
+  width: 250px;
+  font-family: "Montserrat", sans-serif;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
 }
 .upload-dish-menu .side-menu__option-container {
-  border: 1px solid gainsboro;
-  border-radius: 6px;
-  position: relative;
+  border: 1px solid #ddd;
+  border-radius: 8px;
   margin-top: 15px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
 }
 .upload-dish-menu .side-menu__option-container:first-of-type {
   margin-top: 10px;
 }
+.upload-dish-menu .side-menu__option-container:hover {
+  box-shadow: 0 4px 12px rgba(3, 62, 114, 0.15);
+}
 .upload-dish-menu .side-menu__option-container .option {
-  display: inline-block;
-  font-family: var(--Montserrat-Regular);
-  color: #777;
-  padding: 0.5em 1em;
-  font-size: 14.5px;
-  transition: font-weight 0.25s ease;
+  display: block;
+  position: relative;
+  color: #555;
+  padding: 0.75em 1.2em;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s ease, font-weight 0.3s ease, background-color 0.3s ease;
 }
 .upload-dish-menu .side-menu__option-container .option::before {
   content: "";
   position: absolute;
-  background-color: rgba(3, 62, 114, 0.1607843137);
-  width: 0;
-  height: 100%;
-  bottom: 0;
   left: 0;
-  transition: all 0.7s ease;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background-color: rgba(3, 62, 114, 0.15);
+  border-radius: 8px 0 0 8px;
+  transition: width 0.4s ease;
+  z-index: -1;
 }
 .upload-dish-menu .side-menu__option-container .option:hover {
-  color: #000;
-  font-weight: 600;
+  color: #033e72;
+  font-weight: 700;
+  background-color: #f0f5fb;
 }
 .upload-dish-menu .side-menu__option-container .option:hover::before {
-  border-radius: 6px;
-  width: 100%;
+  width: 6px;
+}
+.upload-dish-menu .side-menu__option-container.active {
+  border-color: #033e72;
+  box-shadow: 0 0 10px rgba(3, 62, 114, 0.3);
+}
+.upload-dish-menu .side-menu__option-container.active .option {
+  color: #033e72;
+  font-weight: 700;
+}
+.upload-dish-menu .side-menu__option-container.active .option::before {
+  width: 6px;
+  background-color: #033e72;
 }
 .upload-dish-menu .main-wapper {
-  padding: 1.3em 1.2em;
+  padding: 1.5em 1.2em;
   width: 70%;
+  max-width: 800px;
   margin: 0 auto;
+  font-family: "Montserrat", sans-serif;
+  color: #333;
 }
 .upload-dish-menu .main-wapper form {
   display: flex;
-  gap: 20px;
   flex-direction: column;
-  flex-wrap: wrap;
-  width: auto;
-  margin-top: 1em;
+  gap: 1.5em;
+  margin-top: 1.5em;
 }
 .upload-dish-menu .main-wapper form input[type=text],
-.upload-dish-menu .main-wapper form textarea {
-  border: 1px solid gainsboro;
-  border-radius: 6px;
-  font-family: var(--Montserrat-Regular);
-  font-size: 0.9em;
-  padding: 0.5em;
+.upload-dish-menu .main-wapper form textarea,
+.upload-dish-menu .main-wapper form select {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.75em 1em;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
 }
 .upload-dish-menu .main-wapper form input[type=text]:focus,
-.upload-dish-menu .main-wapper form textarea:focus {
+.upload-dish-menu .main-wapper form textarea:focus,
+.upload-dish-menu .main-wapper form select:focus {
   outline: none;
+  border-color: #036;
+  box-shadow: 0 0 5px rgba(3, 54, 114, 0.5);
+  background-color: #f9fbff;
 }
 .upload-dish-menu .main-wapper form textarea {
   height: 13em;
-  resize: none;
+  resize: vertical;
 }
 .upload-dish-menu .main-wapper form textarea:last-of-type {
   height: 23em;
@@ -77,41 +109,63 @@
 .upload-dish-menu .main-wapper form .file-category {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  gap: 1em;
 }
 .upload-dish-menu .main-wapper form .file-category input[type=file] {
   cursor: pointer;
-  overflow: hidden;
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0.5em;
+  background-color: #fafafa;
+  transition: background-color 0.3s ease;
+}
+.upload-dish-menu .main-wapper form .file-category input[type=file]:hover {
+  background-color: #f0f4ff;
 }
 .upload-dish-menu .main-wapper form .file-category select {
-  border: none;
-  padding: 0.5em;
-  border-radius: 6px;
+  flex-grow: 1;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0.6em 1em;
+  font-size: 1rem;
+  background-color: #fff;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
 }
 .upload-dish-menu .main-wapper form .file-category select option {
-  border: none;
   text-align: center;
+}
+.upload-dish-menu .main-wapper form .file-category select:focus {
+  outline: none;
+  border-color: #036;
+  box-shadow: 0 0 5px rgba(3, 54, 114, 0.5);
 }
 .upload-dish-menu .main-wapper form .submit-button {
   text-align: center;
 }
 .upload-dish-menu .main-wapper form .submit-button button[type=submit] {
-  background-color: rgba(210, 210, 210, 0.792);
+  background-color: #d2d2d2;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   color: #4b4b4b;
   cursor: pointer;
-  font-family: var(--Montserrat-Regular);
-  font-size: 0.85em;
-  font-weight: 500;
-  padding: 0.8em;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.9em 2em;
   width: 200px;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 .upload-dish-menu .main-wapper form .submit-button button[type=submit]:hover {
-  background-color: rgba(199, 199, 199, 0.99);
-  color: #333;
+  background-color: #c7c7c7;
+  color: #222;
+}
+.upload-dish-menu .main-wapper form .submit-button button[type=submit]:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(3, 54, 114, 0.7);
 }
 
 .main-titles {
