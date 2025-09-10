@@ -197,7 +197,7 @@ header nav.onlyLogo {
   fill: #555;
 }
 .search-modal__container .close-button {
-  padding-left: 100px;
+  margin-left: 100px;
 }
 .search-modal__container .modal-button {
   background-color: transparent;
@@ -210,19 +210,47 @@ header nav.onlyLogo {
   opacity: 1;
   background-color: #fff;
   width: 700px;
-  margin: 1rem auto;
+  margin: 6.5em 0.5em;
   padding: 1rem;
   border: 1px solid #ddd;
   border-radius: 6px;
   z-index: 1000;
   position: relative;
 }
+.find-product h2 {
+  font-family: "Montserrat", sans-serif;
+  padding: 0.5em;
+  border-bottom: 1px solid #ddd;
+}
 .find-product ul {
   list-style: none;
   padding: 0;
 }
 .find-product ul li {
-  margin-bottom: 0.5rem;
+  padding: 1rem 1rem 0.2rem;
+}
+.find-product ul li a {
+  display: inline-block;
+  position: relative;
+}
+.find-product ul li a::before {
+  content: "";
+  background-color: rgba(205, 150, 0, 0.1529411765);
+  border: none;
+  border-radius: 3px;
+  position: absolute;
+  width: 0;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  transition: all 0.3s ease;
+}
+.find-product ul li a:hover::before {
+  width: 100%;
+  padding: 0.08em;
+}
+.find-product p {
+  padding: 1rem 1rem 0.5rem;
 }
 
 .active {

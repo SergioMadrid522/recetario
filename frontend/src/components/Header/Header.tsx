@@ -16,7 +16,7 @@ function Header() {
                 <nav className={hideCategories ? 'onlyLogo': ''}>
                     <Content/>
                 </nav>
-                {!hideCategories&& (
+                {!hideCategories && (
                     <div className='categories-container'>
                         <Category category={categories}/>
                     </div>

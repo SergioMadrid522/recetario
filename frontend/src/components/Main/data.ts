@@ -36,13 +36,6 @@ export const dishes:Dish[] = [
     category: "Postre"
   },
   {
-    nombre: "Tacos al Pastor",
-    description: "Tortillas de maíz rellenas con carne de cerdo marinada en achiote y piña.",
-    link: "#",
-    img: tacosPastor,
-    category: "Platillo fuerte",
-  },
-  {
     nombre: "Hamburgesa",
     description: "Base de la cocina mexicana, hechas con masa de maíz nixtamalizado.",
     link: "#",
@@ -50,18 +43,5 @@ export const dishes:Dish[] = [
     category: "Comida rápida",
 
   },
-    {
-    nombre: "Tortillas de Maíz",
-    description: "Refrescante bebida mexicana hecha a base de arroz, canela y leche.",
-    link: "#",
-    img: tortillasMaiz,
-    category: "Tortillas",
-  },
-  {
-    nombre: "Tacos al Pastor",
-    description: "Tortillas de maíz rellenas con carne de cerdo marinada en achiote y piña.",
-    link: "#",
-    img: tacosPastor,
-    category: "Platillo fuerte",
-  },
+
 ];
