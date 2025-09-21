@@ -26,44 +26,40 @@
         flex-direction: column;
         overflow: hidden;
         width: 450px;
-        height: 450px;
+        height: 380px;
         transition: all 0.3s ease;
         &:hover {
             box-shadow: 0 6px 15px rgba(0,0,0,0.2);
             scale: (1.03);
         }
-        &__image {
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                object-position: center;
-            }
-        }
-        &__title {
+        &__card {
             font-family: "Montserrat", sans-serif;
             font-size: 1.25rem;
             font-weight: 700;
             color: #033E72;
-            padding: 0.8em 1em 0.3em;
             a {
                 color: inherit;
                 text-decoration: none;
                 transition: color 0.3s ease;
+                .image-container {
+                    width: 100%;
+                    height: 90%;
+                    overflow: hidden;
+                    img {
+                        width: 100%;
+                        height: 320px;
+                        object-fit: cover;
+                        object-position: center;
+                    }
+                }
+                h2 {
+                    text-align: center;
+                    padding: 3px;
+                }
                 &:hover {
                     color: #f8b500;
                 }
             }
-        }
-        &__description {
-            font-family: "Montserrat", sans-serif;
-            font-size: 0.9rem;
-            color: #555;
-            padding: 0 1em 1em;
-            flex-grow: 1;
         }
     }
 }

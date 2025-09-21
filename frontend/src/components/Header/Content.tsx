@@ -1,5 +1,5 @@
-import type { Dish } from "../Main/type.ts";
-import { dishes } from "../Main/data.ts";
+//import type { Dish } from "../Main/type.ts";
+//import { dishes } from "../Main/data.ts";
 import type { searchModalProps } from "./type.ts";
 
 import { useLocation } from "react-router-dom";
@@ -96,17 +96,15 @@ function SearchModal({open, setOpenModal}: searchModalProps) {
                     </button>
                 </div>
             </div>
-            { open && <ShowDish products={dishes} query={query}/> } 
+        {/*  { open && <ShowDish query={query}/> }  */}
         </>
     );
 }
-
-function ShowDish({ products, query }: {products: Dish[], query: string}) {
+/* 
+function ShowDish({ products, query }: {products: Dish[] query: string}) {
     const filteredProducts = products.filter((dish) =>
         dish.nombre.toLowerCase().includes(query.toLowerCase())
     );
-    console.log("query", query);
-    console.log("filtered", filteredProducts);
     return(
         <>
             {query && (
@@ -128,5 +126,5 @@ function ShowDish({ products, query }: {products: Dish[], query: string}) {
         </>
     );
     
-}
-export default Content;
+} */
+export default Content; 

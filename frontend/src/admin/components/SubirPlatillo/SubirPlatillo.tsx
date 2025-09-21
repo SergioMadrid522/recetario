@@ -1,9 +1,16 @@
+import type { UploadDishFormContentProps } from "../../../components/Main/type.ts";
+
 import { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { sideMenuOptions, options } from "../data.ts";
 
+/* Firebase */
+/* import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { storage } from "../../../../firebase.config.ts"; */
+
 import "./SubirPlatillo.css"
 import Home from "../Home/Home.tsx";
+//import { categories } from "../../../components/Header/data.ts";
 
 function SubirPlatillo() {
     const location = useLocation();
@@ -35,8 +42,65 @@ function SideMenu() {
 }
 
 function UploadDish() {
-    const handleSubmit = (e: React.FormEvent) => {
+    const [platillo, setPlatillo] = useState(({
+        nombre: "",
+        ingredientes: "",
+        instrucciones: "",
+        imagen: null as File | null,
+        id_categoria: options[0].id
+    }));
+    
+    const handleSubmit = async (e: React.FormEvent) => {
+        const apiURL = "http://localhost:3000/agregarPlatillo";
+        
         e.preventDefault();
+
+        try {
+            /* const storageRef = ref(storage, `imagenes/${Date.now()}-${platillo.imagen.name}`);
+            await uploadBytes(storageRef, platillo.imagen);
+            const url = await getDownloadURL(storageRef);
+
+            await fetch(apiURL, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({...platillo, imageUrl: url}),
+            })
+            alert("Platillo subido con exito");
+            setPlatillo({
+                nombre: "",
+                ingredientes: "",
+                instrucciones: "",
+                imagen: null,
+                categoria: options[0] 
+            }); */
+            const res = await fetch(apiURL, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    nombre: platillo.nombre,
+                    ingredientes: platillo.ingredientes,
+                    instrucciones: platillo.instrucciones,
+                    id_categoria: platillo.id_categoria
+                })
+            });
+            if (!res.ok) {
+                alert("Error al subir el platillo")
+                return;
+            }
+            alert("Platillo subido");
+            setPlatillo({
+                nombre: "",
+                ingredientes: "",
+                instrucciones: "",
+                imagen: null,
+                id_categoria: options[0].id
+            });
+        } catch (error) {
+            console.error("Error", error)
+            alert("Error al subir el platillo")
+        }
     };
     
     return (
@@ -44,35 +108,27 @@ function UploadDish() {
             <div className="main-wapper">
                 <h2 className="main-titles">Subir platillo</h2>
                 <form onSubmit={handleSubmit} autoComplete="off">
-                    <UploadDishFormContent/>
+                    <UploadDishFormContent platillo={platillo} setPlatillo={setPlatillo}/>
                 </form>
             </div>  
         </>
     );
 }
 
-function UploadDishFormContent() {
-    const [platillo, setPlatillo] = useState({
-        nombre: "",
-        ingredientes: "",
-        instrucciones:"",
-        imagen: null as File | null,
-        categoria: options[0]
-    });
-
+function UploadDishFormContent({ platillo, setPlatillo }: UploadDishFormContentProps) {
     const handleChange = (
-        e: React.ChangeEvent<HTMLInputElement | 
-        HTMLTextAreaElement | 
-        HTMLSelectElement>
+        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
     ) => {
         const { name, value, files } = e.target as HTMLInputElement;
-        if (files) {
-            setPlatillo({ ...platillo, [name]: files[0] });
+
+        if (name === "imagen" && files) {
+            setPlatillo(prev => ({ ...prev, imagen: files[0] }));
+        } else if (name === "categoria") {
+            setPlatillo(prev => ({ ...prev, id_categoria: Number(value) }));
         } else {
-            setPlatillo({ ...platillo, [name]: value });
+            setPlatillo(prev => ({ ...prev, [name]: value }));
         }
     };
-
     return (
         <>
             <input 
@@ -98,19 +154,21 @@ function UploadDishFormContent() {
                 placeholder="Escribe aquí las instrucciones del platillo"
             />
             <div className="file-category">
-                <input 
+                {/* <input 
                     type="file"
                     name="imagen"
                     accept="image/*"
                     onChange={handleChange}
-                />
+                /> */}
                 <select 
                     name="categoria"
-                    value={platillo.categoria}
+                    value={platillo.id_categoria}
                     onChange={handleChange}
                 >
-                    {options.map((option, idx) => (
-                        <option value={option} key={idx}>{option}</option>
+                    {options.map((option) => (
+                        <option value={option.id} key={option.id}>
+                            {option.name}
+                        </option>
                     ))}
                 </select>
             </div>

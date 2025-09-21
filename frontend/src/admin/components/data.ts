@@ -12,14 +12,41 @@ export const sideMenuOptions: option[] = [
 ]
 
 export const options = [
-    "Categoria",
-    "Bebida", 
-    "Comida mexicana", 
-    "Comida rápida",
-    "Complementos",
-    "Platillo principal",
-    "Postre",
-    "Reposteria", 
-    "Salsas",
-    "Tortillas",
+    {
+        id: 1,
+        name: "Bebida"
+    },
+    {
+        id: 2,
+        name: "Comida mexicana", 
+    },
+    {
+        id: 3,
+        name: "Comida rápida",
+    },
+    {
+        id: 4,
+        name: "Complementos",
+    },
+    {
+        id: 5,
+        name: "Platillo principal",
+    },
+    {
+        id: 6,
+        name: "Postre",
+    },
+    {
+        id: 7,
+        name: "Reposteria",
+    },
+    {
+        id: 8,
+        name: "Salsas",
+    },
+    {
+        id: 9,
+        name:"Tortillas",
+    }
+    
 ]

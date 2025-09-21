@@ -5,7 +5,7 @@ function Filter() {
     const toggleDropdown = () => setOpen(!open);
     return (
         <div className="utility-bar">
-            <div className="link-dropdowN">
+            <div className="link-dropdown">
                 <button 
                 type="button"
                 className="link-dropdown__button"

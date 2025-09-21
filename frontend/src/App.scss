@@ -1,6 +1,7 @@
 @use "./components/Header/header";
 @use "./components/Main/main";
 @use "./components/Footer/footer";
+@use "./mediaQueries";
 * {
     box-sizing: border-box;
     padding: 0;
