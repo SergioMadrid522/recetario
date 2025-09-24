@@ -516,4 +516,10 @@ li {
 
 img {
   width: 50px;
-}/*# sourceMappingURL=App.css.map */
+}
+
+/* #root {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    height: 100vh;
+} *//*# sourceMappingURL=App.css.map */

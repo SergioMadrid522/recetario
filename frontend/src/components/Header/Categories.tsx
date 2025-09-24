@@ -1,15 +1,16 @@
 import type { category } from "./type.ts";
+import { Link } from "react-router-dom";
 
-function Category({ category } : category) {
-    return (
-        <ul className="category-list">
-            {category.map((item)=> (
-                <a href={item.link} className="category-list__item" key={item.name}>
-                    <li>{item.name}</li>
-                </a>
-            ))}
-        </ul>        
-    );
+function Categories({ category }: category) {
+  return (
+    <ul className="category-list">
+      {category.map((item) => (
+        <li key={item.id} className="category-list__item">
+          <Link to={`/menu/${item.id}`}>{item.name}</Link>
+        </li>
+      ))}
+    </ul>
+  );
 }
 
-export default Category;
+export default Categories;

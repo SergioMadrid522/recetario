@@ -1,8 +1,8 @@
 import { useLocation } from "react-router-dom";
-import { categories } from "./data.ts";
 
 import Content from "./Content";
 import Category from "./Categories";
+import { options } from "../../admin/components/data.ts";
 
 
 function Header() {
@@ -18,7 +18,7 @@ function Header() {
                 </nav>
                 {!hideCategories && (
                     <div className='categories-container'>
-                        <Category category={categories}/>
+                        <Category category={options}/>
                     </div>
                 )}
             </header>

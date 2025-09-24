@@ -1,5 +1,5 @@
 type item = {
-    link: string;
+    id: number;
     name: string
 }
 

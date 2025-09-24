@@ -1,8 +1,9 @@
 export type Dish = {
+    id_platillo: number
     nombre: string;
     description: string;
     link: string;
-    category: string;
+    id_categoria: number
 }
 
 export type UploadDishFormContentProps = {
