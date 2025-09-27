@@ -65,7 +65,7 @@
   width: 6px;
   background-color: #033e72;
 }
-.upload-dish-menu .main-wapper {
+.upload-dish-menu .main-wrapper {
   padding: 1.5em 1.2em;
   width: 70%;
   max-width: 800px;
@@ -73,15 +73,15 @@
   font-family: "Montserrat", sans-serif;
   color: #333;
 }
-.upload-dish-menu .main-wapper form {
+.upload-dish-menu .main-wrapper form {
   display: flex;
   flex-direction: column;
   gap: 1.5em;
   margin-top: 1.5em;
 }
-.upload-dish-menu .main-wapper form input[type=text],
-.upload-dish-menu .main-wapper form textarea,
-.upload-dish-menu .main-wapper form select {
+.upload-dish-menu .main-wrapper form input[type=text],
+.upload-dish-menu .main-wrapper form textarea,
+.upload-dish-menu .main-wrapper form select {
   border: 1px solid #ccc;
   border-radius: 8px;
   font-family: inherit;
@@ -91,28 +91,28 @@
   width: 100%;
   box-sizing: border-box;
 }
-.upload-dish-menu .main-wapper form input[type=text]:focus,
-.upload-dish-menu .main-wapper form textarea:focus,
-.upload-dish-menu .main-wapper form select:focus {
+.upload-dish-menu .main-wrapper form input[type=text]:focus,
+.upload-dish-menu .main-wrapper form textarea:focus,
+.upload-dish-menu .main-wrapper form select:focus {
   outline: none;
   border-color: #036;
   box-shadow: 0 0 5px rgba(3, 54, 114, 0.5);
   background-color: #f9fbff;
 }
-.upload-dish-menu .main-wapper form textarea {
+.upload-dish-menu .main-wrapper form textarea {
   height: 13em;
   resize: vertical;
 }
-.upload-dish-menu .main-wapper form textarea:last-of-type {
+.upload-dish-menu .main-wrapper form textarea:last-of-type {
   height: 23em;
 }
-.upload-dish-menu .main-wapper form .file-category {
+.upload-dish-menu .main-wrapper form .file-category {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1em;
 }
-.upload-dish-menu .main-wapper form .file-category input[type=file] {
+.upload-dish-menu .main-wrapper form .file-category input[type=file] {
   cursor: pointer;
   width: 100%;
   max-width: 300px;
@@ -122,10 +122,10 @@
   background-color: #fafafa;
   transition: background-color 0.3s ease;
 }
-.upload-dish-menu .main-wapper form .file-category input[type=file]:hover {
+.upload-dish-menu .main-wrapper form .file-category input[type=file]:hover {
   background-color: #f0f4ff;
 }
-.upload-dish-menu .main-wapper form .file-category select {
+.upload-dish-menu .main-wrapper form .file-category select {
   flex-grow: 1;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -135,18 +135,18 @@
   cursor: pointer;
   transition: border-color 0.3s ease;
 }
-.upload-dish-menu .main-wapper form .file-category select option {
+.upload-dish-menu .main-wrapper form .file-category select option {
   text-align: center;
 }
-.upload-dish-menu .main-wapper form .file-category select:focus {
+.upload-dish-menu .main-wrapper form .file-category select:focus {
   outline: none;
   border-color: #036;
   box-shadow: 0 0 5px rgba(3, 54, 114, 0.5);
 }
-.upload-dish-menu .main-wapper form .submit-button {
+.upload-dish-menu .main-wrapper form .submit-button {
   text-align: center;
 }
-.upload-dish-menu .main-wapper form .submit-button button[type=submit] {
+.upload-dish-menu .main-wrapper form .submit-button button[type=submit] {
   background-color: #d2d2d2;
   border: none;
   border-radius: 8px;
@@ -159,11 +159,11 @@
   width: 200px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-.upload-dish-menu .main-wapper form .submit-button button[type=submit]:hover {
+.upload-dish-menu .main-wrapper form .submit-button button[type=submit]:hover {
   background-color: #c7c7c7;
   color: #222;
 }
-.upload-dish-menu .main-wapper form .submit-button button[type=submit]:focus {
+.upload-dish-menu .main-wrapper form .submit-button button[type=submit]:focus {
   outline: none;
   box-shadow: 0 0 8px rgba(3, 54, 114, 0.7);
 }

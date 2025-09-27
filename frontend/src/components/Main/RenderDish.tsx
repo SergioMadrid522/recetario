@@ -17,13 +17,13 @@ function RenderDish({ dishes }: RenderDishProps) {
       async function fetchData() {
         try {
           const res = await fetch(apiUrl);
+          if (!res.ok) throw new Error("Error al cargar el platillo");
           const result = await res.json();
           setData(result.dishes || []);
         } catch (error) {
           console.error("Error fetching dishes:", error);
         }
       }
-
       fetchData();
     } else {
       setData(dishes);
@@ -40,8 +40,6 @@ function RenderDish({ dishes }: RenderDishProps) {
         const image = dishImages[idx % dishImages.length];
         return (
           <article className="dish-container" key={dish.id_platillo || idx}>
-            {" "}
-            {/* Usa id_platillo como key si existe */}
             <div className="dish-container__card">
               <Link
                 to={`/menu/platillo/${dish.nombre}`}

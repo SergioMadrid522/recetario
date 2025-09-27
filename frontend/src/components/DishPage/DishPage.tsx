@@ -1,7 +1,9 @@
 function DishPage() {
-    return (
-        <></>
-    );
+  return (
+    <>
+      <h2></h2>
+    </>
+  );
 }
 
 export default DishPage;

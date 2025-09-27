@@ -1,0 +1,66 @@
+.error-alert__popup {
+  border-radius: 12px;
+  padding: 25px 20px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.error-alert__title {
+  color: #555;
+  font-family: "Playfair Display", serif;
+  font-size: 2.4em;
+  font-weight: 400;
+  font-style: italic;
+  text-align: center;
+  padding: 15px 10px;
+  margin-bottom: 20px;
+  scroll-margin-top: 100vh;
+}
+.error-alert__text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2em;
+  color: #555;
+  line-height: 1.5;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.error-alert__confirmBtn {
+  background-color: #033e72;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.error-alert__confirmBtn:hover {
+  background-color: #2a8ee5;
+  outline: none;
+}
+
+.success-alert__popup {
+  border-radius: 12px;
+  padding: 25px 20px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.success-alert__title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.4em;
+  font-weight: 400;
+  font-style: italic;
+  text-align: center;
+  padding: 15px 10px;
+  margin-bottom: 20px;
+  scroll-margin-top: 100vh;
+}
+.success-alert__text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2em;
+  line-height: 1.5;
+  text-align: center;
+  margin-bottom: 10px;
+}/*# sourceMappingURL=Alerts.css.map */

@@ -12,7 +12,8 @@ import Home from "./admin/components/Home/Home";
 import AdminLayout from "./admin/components/Admin-Layout/AdminLayout";
 import FilteredCategory from "./components/Main/FilteredCategory";
 import DishDetails from "./components/Main/DishDetails";
-
+import { MenuProvider } from "./MenuProvider";
+import ScrollToTop from "./ScrollToTop";
 function App() {
   return (
     <Router>
@@ -23,14 +24,15 @@ function App() {
 
 function AppContent() {
   return (
-    <>
+    <MenuProvider>
+      <ScrollToTop />
       <Header />
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/recetario" element={<Main />} />
         <Route path="/menu" element={<Main />} />
         <Route path="/menu/:categoryId" element={<FilteredCategory />} />
-        <Route path="/menu/platillo/:dishId" element={<DishDetails />} />
+        <Route path="/menu/platillo/:nombre" element={<DishDetails />} />
 
         <Route path="/admin" element={<AdminLayout />}>
           <Route path="subir-platillo" element={<SubirPlatillo />} />
@@ -38,7 +40,7 @@ function AppContent() {
         </Route>
       </Routes>
       <Footer />
-    </>
+    </MenuProvider>
   );
 }
 export default App;
