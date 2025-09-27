@@ -1,18 +1,14 @@
-import express from 'express';
-import 'dotenv/config';
-import cors from 'cors';
-import http from 'http';
+import express from "express";
+import "dotenv/config";
+import cors from "cors";
+import http from "http";
 
 // Routes
 import adminRoutes from "./routes/admin.route.js";
 import dishRoutes from "./routes/dish.route.js";
 
 const port = process.env.SERVER_PORT || 3001;
-const allowedOrigins = [
-  'http://192.168.0.12:5173',
-  'http://localhost:5173',
-  ''
-];
+const allowedOrigins = ["http://localhost:5173", "http://192.168.0.7:5173"];
 
 const corsOptions = {
   origin: function (origin, callback) {

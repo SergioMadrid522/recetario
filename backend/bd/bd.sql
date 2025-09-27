@@ -39,14 +39,24 @@ INSERT INTO categoria (nombre) VALUES("Postre");
 INSERT INTO categoria (nombre) VALUES("Reposteria");
 INSERT INTO categoria (nombre) VALUES("Salsas");
 INSERT INTO categoria (nombre) VALUES("Tortillas");
-
+/*
+INSERT INTO platillo (nombre, ingredientes, instrucciones, id_categoria)
+VALUES (
+    "Enchiladas verdes",
+    "Tortillas, salsa verde, pollo, crema, queso",
+    "Rellena las tortillas con pollo, baña en salsa verde, agrega crema y queso",
+    2
+);
+*/
 SELECT * FROM platillo;
 SELECT * FROM categoria;
 SELECT * FROM ingrediente;
 SELECT * FROM instruccion;
+SELECT id_platillo, nombre, link, id_categoria FROM platillo;
 
 
-/*drop table instruccion;
+/*
+drop table instruccion;
 drop table ingrediente;
 drop table platillo;
 drop table categoria;
