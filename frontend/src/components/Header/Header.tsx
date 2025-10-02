@@ -17,7 +17,6 @@ function Header() {
       <header>
         <nav className={hideCategories ? "onlyLogo" : ""}>
           <Content />
-
           <button
             className="categoryMenuBtn"
             type="button"

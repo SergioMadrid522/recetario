@@ -310,7 +310,7 @@ header nav.onlyLogo {
   font-family: "Montserrat", sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
-  color: #033E72;
+  color: #033e72;
 }
 .dish-wrap .dish-container__card a {
   color: inherit;
@@ -336,6 +336,94 @@ header nav.onlyLogo {
 }
 .dish-wrap .dish-container__card a:hover {
   color: #f8b500;
+}
+
+/* .dish-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px 40px;
+  &__title {
+    color: #555;
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    font-weight: 400;
+    font-style: italic;
+  }
+  &__ingredients,
+  &__instructions {
+    h2 {
+      padding: 0 30px 20px 0;
+    }
+    pre {
+      line-height: 2;
+    }
+  }
+} */
+.dish-details {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  font-family: "Montserrat", sans-serif;
+}
+.dish-details__title {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #777;
+  margin-top: 50px;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+  font-family: "Playfair Display", serif;
+  font-size: 3.8rem;
+  font-weight: 600;
+  font-style: italic;
+  line-height: 1.1;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+.dish-details__content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  padding: 0 10px;
+}
+@media (min-width: 768px) {
+  .dish-details__content {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.dish-details__ingredients, .dish-details__instructions {
+  background-color: #fcfcfc;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 25px 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+.dish-details__ingredients:hover, .dish-details__instructions:hover {
+  transform: translateY(-5px);
+}
+.dish-details__ingredients h2, .dish-details__instructions h2 {
+  color: #033e72;
+  font-family: "Playfair Display", serif;
+  font-size: 2.2rem;
+  font-weight: 500;
+  margin-bottom: 18px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f8b500;
+}
+.dish-details__ingredients pre, .dish-details__instructions pre {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: #444;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 footer {
@@ -490,6 +578,8 @@ footer .first-section {
     overflow: hidden;
     overflow-y: auto;
     transition: all 0.35s ease-out;
+    -webkit-backdrop-filter: blur(2px) brightness(20%);
+            backdrop-filter: blur(2px) brightness(20%);
     z-index: 99999;
   }
   header .categories-container .category-list {

@@ -1,7 +1,7 @@
 function DishPage() {
   return (
     <>
-      <h2></h2>
+      <h2>hajbdiuabsodiu</h2>
     </>
   );
 }

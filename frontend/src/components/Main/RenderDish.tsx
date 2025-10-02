@@ -1,7 +1,7 @@
 import type { Dish } from "./type.ts";
 import { useEffect, useState } from "react";
-import { dishImages } from "./data.ts";
 import { Link } from "react-router-dom";
+import { dishImages } from "./data.ts";
 
 type RenderDishProps = {
   dishes?: Dish[];

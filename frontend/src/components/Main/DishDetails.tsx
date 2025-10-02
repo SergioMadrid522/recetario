@@ -30,17 +30,19 @@ function DishDetails() {
       <div className="dish-details__title">
         <h1>{dish.nombre}</h1>
       </div>
-      <div className="dish-details__ingredients">
-        <h2>Ingredientes</h2>
-        <pre>
-          {dish.ingredientes.replace(/^"|"$/g, "").replace(/\\n/g, "\n")}
-        </pre>
-      </div>
-      <div className="dish-details__instructions">
-        <h2>Instruciones de preparación</h2>
-        <pre>
-          {dish.instrucciones.replace(/^"|"$/g, "").replace(/\\n/g, "\n")}
-        </pre>
+      <div className="dish-details__content">
+        <div className="dish-details__ingredients">
+          <h2>Ingredientes</h2>
+          <pre>
+            {dish.ingredientes.replace(/^"|"$/g, "").replace(/\\n/g, "\n")}
+          </pre>
+        </div>
+        <div className="dish-details__instructions">
+          <h2>Instruciones de preparación</h2>
+          <pre>
+            {dish.instrucciones.replace(/^"|"$/g, "").replace(/\\n/g, "\n")}
+          </pre>
+        </div>
       </div>
     </div>
   );

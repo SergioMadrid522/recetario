@@ -78,6 +78,7 @@
       overflow: hidden;
       overflow-y: auto;
       transition: all 0.35s ease-out;
+      backdrop-filter: blur(2px) brightness(20%);
       z-index: 99999;
       .category-list {
         display: block;
