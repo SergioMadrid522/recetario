@@ -36,7 +36,7 @@
 } */
 @media screen and (max-width: 767px) {
   header .onlyLogo {
-    justify-content: space-around !important;
+    justify-content: space-between !important;
   }
   .upload-dish-menu {
     position: relative;
@@ -145,6 +145,10 @@
   color: #333;
   margin-bottom: 0.5em;
   text-align: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  -webkit-hyphens: auto;
+          hyphens: auto;
 }
 .home-wrap .item-container .dish-container .actions {
   display: flex;
@@ -160,7 +164,7 @@
   font-size: 0.85rem;
   cursor: pointer;
   font-family: "Montserrat", sans-serif;
-  transition: background 0.2s ease;
+  transition: all 0.2s ease;
 }
 .home-wrap .item-container .dish-container .actions button.edit {
   background-color: #f8b500;

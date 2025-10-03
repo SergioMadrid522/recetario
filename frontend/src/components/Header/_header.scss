@@ -217,17 +217,18 @@ header {
   }
 }
 
-.find-product {
-  visibility: hidden;
-  opacity: 1;
+/* .find-product {
   background-color: #fff;
-  width: 700px;
-  margin: 6.5em 0.5em;
-  padding: 1rem;
   border: 1px solid #ddd;
   border-radius: 6px;
-  z-index: 1000;
+  opacity: 1;
+  padding: 1rem;
   position: relative;
+  visibility: hidden;
+  margin: 6.5em 2.5em;
+  width: 700px;
+  z-index: 1000;
+
   h2 {
     font-family: "Montserrat", sans-serif;
     padding: 0.5em;
@@ -262,6 +263,70 @@ header {
   }
   p {
     padding: 1rem 1rem 0.5rem;
+  }
+} */
+
+.find-product {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  opacity: 1;
+  padding: 1rem;
+  position: absolute;
+  visibility: hidden;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-59%);
+  width: 90%;
+  max-width: 700px;
+  margin: 0;
+  z-index: 1000;
+  max-height: 70vh;
+  overflow-y: auto;
+
+  h2 {
+    font-family: "Montserrat", sans-serif;
+    padding: 0.5em;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      padding: 1rem 1rem 0.2rem;
+
+      a {
+        display: inline-block;
+        position: relative;
+        &::before {
+          content: "";
+          background-color: #cd960027;
+          border-radius: 3px;
+          position: absolute;
+          width: 0;
+          height: 100%;
+          left: 0;
+          bottom: 0;
+          transition: all 0.3s ease;
+        }
+        &:hover::before {
+          width: 100%;
+          padding: 0.08em;
+        }
+      }
+    }
+  }
+
+  p {
+    padding: 1rem 1rem 0.5rem;
+    text-align: center;
+  }
+
+  &.active {
+    visibility: visible;
   }
 }
 

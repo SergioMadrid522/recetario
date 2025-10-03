@@ -33,15 +33,27 @@ function DishDetails() {
       <div className="dish-details__content">
         <div className="dish-details__ingredients">
           <h2>Ingredientes</h2>
-          <pre>
-            {dish.ingredientes.replace(/^"|"$/g, "").replace(/\\n/g, "\n")}
-          </pre>
+          <ul>
+            {dish.ingredientes
+              .replace(/^"|"$/g, "") // quita comillas al inicio y fin
+              .replace(/\\n/g, "\n") // convierte \n en saltos reales
+              .split("\n") // separa por líneas
+              .map((linea, i) =>
+                linea.trim() ? <li key={i}>{linea.trim()}</li> : null
+              )}
+          </ul>
         </div>
         <div className="dish-details__instructions">
-          <h2>Instruciones de preparación</h2>
-          <pre>
-            {dish.instrucciones.replace(/^"|"$/g, "").replace(/\\n/g, "\n")}
-          </pre>
+          <h2>Instrucciones de preparación</h2>
+          <ol>
+            {dish.instrucciones
+              .replace(/^"|"$/g, "")
+              .replace(/\\n/g, "\n")
+              .split("\n")
+              .map((linea, index) =>
+                linea.trim() ? <li key={index}>{linea.trim()}</li> : null
+              )}
+          </ol>
         </div>
       </div>
     </div>

@@ -14,6 +14,7 @@ import FilteredCategory from "./components/Main/FilteredCategory";
 import DishDetails from "./components/Main/DishDetails";
 import { MenuProvider } from "./MenuProvider";
 import ScrollToTop from "./ScrollToTop";
+import { DishesProvider } from "./DishContext";
 function App() {
   return (
     <Router>
@@ -26,19 +27,21 @@ function AppContent() {
   return (
     <MenuProvider>
       <ScrollToTop />
-      <Header />
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/recetario" element={<Main />} />
-        <Route path="/menu" element={<Main />} />
-        <Route path="/menu/:categoryId" element={<FilteredCategory />} />
-        <Route path="/menu/platillo/:nombre" element={<DishDetails />} />
+      <DishesProvider>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/recetario" element={<Main />} />
+          <Route path="/menu" element={<Main />} />
+          <Route path="/menu/:categoryId" element={<FilteredCategory />} />
+          <Route path="/menu/platillo/:nombre" element={<DishDetails />} />
 
-        <Route path="/admin" element={<AdminLayout />}>
-          <Route path="subir-platillo" element={<SubirPlatillo />} />
-          <Route path="Home" element={<Home />}></Route>
-        </Route>
-      </Routes>
+          <Route path="/admin" element={<AdminLayout />}>
+            <Route path="subir-platillo" element={<SubirPlatillo />} />
+            <Route path="Home" element={<Home />}></Route>
+          </Route>
+        </Routes>
+      </DishesProvider>
       <Footer />
     </MenuProvider>
   );

@@ -1,10 +1,10 @@
-//import type { Dish } from "../Main/type.ts";
-//import { dishes } from "../Main/data.ts";
-import { NavLink } from "react-router-dom";
-import type { searchModalProps } from "./type.ts";
-
+import { Link, NavLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
+
+import type { searchModalProps, showDish } from "./type.ts";
+
+import { useDishes } from "../../DishContext";
 
 function Content() {
   const location = useLocation();
@@ -12,6 +12,8 @@ function Content() {
   const hideSearchHome = location.pathname === "/admin/home";
 
   const [openModal, setOpenModal] = useState(false);
+  const [query, setQuery] = useState("");
+
   const handleOpenModal = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     setOpenModal(!openModal);
@@ -37,7 +39,12 @@ function Content() {
             </span>
             <span className="show-search-link__text">Buscar platillo</span>
           </a>
-          <SearchModal open={openModal} setOpenModal={setOpenModal} />
+          <SearchModal
+            open={openModal}
+            setOpenModal={setOpenModal}
+            query={query}
+            setQuery={setQuery}
+          />
         </div>
       )}
       <Logo />
@@ -55,12 +62,16 @@ function Logo() {
   );
 }
 
-function SearchModal({ open, setOpenModal }: searchModalProps) {
-  const [query, setQuery] = useState("");
+function SearchModal({
+  open,
+  setOpenModal,
+  query,
+  setQuery,
+}: searchModalProps) {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
   };
-  //const
+  //const { dishes } = useDishes();
   return (
     <>
       <div className={`search-modal ${open ? "active" : ""}`}>
@@ -97,35 +108,46 @@ function SearchModal({ open, setOpenModal }: searchModalProps) {
           </button>
         </div>
       </div>
-      {/*  { open && <ShowDish query={query}/> }  */}
+      {open && <ShowDish query={query} setOpenModal={setOpenModal} />}
     </>
   );
 }
-/* 
-function ShowDish({ products, query }: {products: Dish[] query: string}) {
-    const filteredProducts = products.filter((dish) =>
-        dish.nombre.toLowerCase().includes(query.toLowerCase())
-    );
-    return(
-        <>
-            {query && (
-                <div className={`find-product ${query ? 'active': ''}`}>
-                <h2>Productos relacionados</h2>
-                {filteredProducts.length > 0 ? (
-                    <ul>
-                        {filteredProducts.map((dish) => (
-                            <li key={dish.nombre}>
-                                <a href={dish.link}>{dish.nombre}</a>
-                            </li>
-                        ))}
-                    </ul>
-                ): (
-                    <p>No se encontraron resultados.</p>
-                )}
-            </div>
-            )}
-        </>
-    );
-    
-} */
+
+function ShowDish({ query, setOpenModal }: showDish) {
+  const { dishes } = useDishes();
+
+  if (!dishes.length) {
+    return <p>Cargando platillos...</p>;
+  }
+
+  const filteredProducts = dishes.filter((dish) =>
+    dish.nombre.toLowerCase().includes(query.toLowerCase())
+  );
+  return (
+    <>
+      {query && (
+        <div className={`find-product ${query ? "active" : ""}`}>
+          <h2>Productos relacionados</h2>
+          {filteredProducts.length > 0 ? (
+            <ul>
+              {filteredProducts.map((dish) => (
+                <li key={dish.nombre}>
+                  <Link
+                    to={`/menu/platillo/${dish.nombre}`}
+                    rel="noopener noreferrer"
+                    onClick={() => setOpenModal(false)}
+                  >
+                    {dish.nombre}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p>No se encontraron resultados.</p>
+          )}
+        </div>
+      )}
+    </>
+  );
+}
 export default Content;

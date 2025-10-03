@@ -16,6 +16,7 @@ type Category = {
   id: number;
   name: string;
 };
+
 export type UploadDishFormContentProps = {
   platillo: {
     nombre: string;
@@ -34,4 +35,16 @@ export type UploadDishFormContentProps = {
     }>
   >;
   options: Category[];
+};
+
+export type AdminBtnsProps = {
+  dishName: string;
+  dishId: number;
+  onDeleted?: () => void;
+};
+
+export type deleteBtnProps = {
+  dishName: string;
+  dishId: number;
+  onDeleted?: () => void;
 };
