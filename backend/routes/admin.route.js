@@ -56,11 +56,12 @@ router.post("/agregarPlatillo", async (req, res) => {
   }
 });
 /* -------------------------- DELETE: Delete Dish -------------------------- */
-router.delete("/deleteDish", async (req, res) => {
-  const { id_platillo } = req.body;
+router.delete("/deleteDish/:id_platillo", async (req, res) => {
+  const { id_platillo } = req.params;
 
   try {
-    if (getDishById.length === 0) {
+    const dish = await getDishById(id_platillo);
+    if (!dish) {
       return res.status(400).json({ error: "No se encuentra el platillo" });
     }
 
