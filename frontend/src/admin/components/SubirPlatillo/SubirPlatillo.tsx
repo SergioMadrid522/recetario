@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { options } from "../data.ts";
-import { ErrorAlert, SuccessAlert } from "../../../Alerts/alerts.ts";
+import { ErrorAlert, SuccessAlert } from "../../../Alerts/Alerts.ts";
 import DishFormContent from "./DishFormContent";
 import SideMenu from "./SideMenu";
 /* Firebase */

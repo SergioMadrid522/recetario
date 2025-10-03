@@ -12,7 +12,7 @@
   scroll-margin-top: 100dvh;
 }
 
-.dish-wrap {
+/* .dish-wrap {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -63,32 +63,92 @@
       }
     }
   }
-}
-
-/* .dish-details {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 30px;
-  padding: 20px 40px;
-  &__title {
-    color: #555;
-    font-family: "Playfair Display", serif;
-    font-size: 2rem;
-    font-weight: 400;
-    font-style: italic;
-  }
-  &__ingredients,
-  &__instructions {
-    h2 {
-      padding: 0 30px 20px 0;
-    }
-    pre {
-      line-height: 2;
-    }
-  }
 } */
+
+.dish-wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
+  padding: 20px 20px 60px;
+  justify-items: center;
+
+  .dish-container {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    width: 300px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.15);
+    }
+
+    &__card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+
+      a {
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        .image-container {
+          width: 100%;
+          aspect-ratio: 1 / 1;
+          overflow: hidden;
+          position: relative;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+          }
+
+          &:hover img {
+            transform: scale(1.1);
+          }
+        }
+
+        h2 {
+          font-family: "Montserrat", sans-serif;
+          font-size: 1.3rem;
+          font-weight: 600;
+          color: #033e72;
+          text-align: center;
+          padding: 15px 10px;
+          letter-spacing: 0.5px;
+          position: relative;
+
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0%;
+            height: 2px;
+            background-color: #f8b500;
+            transition: width 0.3s ease;
+          }
+        }
+
+        a:hover h2::after {
+          width: 50%;
+        }
+
+        &:hover h2::after {
+          width: 50%;
+        }
+      }
+    }
+  }
+}
 
 .dish-details {
   max-width: 900px;
