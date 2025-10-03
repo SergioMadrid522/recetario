@@ -52,8 +52,7 @@ SELECT * FROM platillo;
 SELECT * FROM categoria;
 SELECT * FROM ingrediente;
 SELECT * FROM instruccion;
-SELECT id_platillo, nombre, link, id_categoria FROM platillo;
-
+SELECT id_platillo, nombre, id_categoria FROM platillo;
 
 /*
 drop table instruccion;

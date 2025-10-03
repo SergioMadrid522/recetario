@@ -4,6 +4,7 @@ import { dishValidation } from "../validation/dishValidation.js";
 
 const router = express.Router();
 
+/* -------------------------- GET: Obtain the Dish information -------------------------- */
 router.get("/getDishes", async (req, res) => {
   try {
     const [rows] = await connection.query("SELECT * FROM platillo");
@@ -14,12 +15,9 @@ router.get("/getDishes", async (req, res) => {
   }
 });
 
+/* -------------------------- GET: Obtain the Dish info by its name -------------------------- */
 router.get("/getDish/:nombre", async (req, res) => {
   const nombre = req.params.nombre;
-  //const errors = dishValidation(nombre);
-  /* if (errors.length > 0) {
-    return res.status(400).json({ errors });
-  } */
 
   try {
     const [rows] = await connection.query(
