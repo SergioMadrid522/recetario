@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import type { searchModalProps, showDish } from "./type.ts";
 
-import { useDishes } from "../../DishContext";
+import { useDishes } from "../utils/DishContext.tsx";
 
 function Content() {
   const location = useLocation();
@@ -71,7 +71,6 @@ function SearchModal({
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
   };
-  //const { dishes } = useDishes();
   return (
     <>
       <div className={`search-modal ${open ? "active" : ""}`}>
@@ -83,6 +82,7 @@ function SearchModal({
               value={query}
               onChange={handleInputChange}
             />
+
             <button type="button" className="modal-button search-button">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -123,6 +123,7 @@ function ShowDish({ query, setOpenModal }: showDish) {
   const filteredProducts = dishes.filter((dish) =>
     dish.nombre.toLowerCase().includes(query.toLowerCase())
   );
+
   return (
     <>
       {query && (

@@ -2,8 +2,8 @@ import { useLocation } from "react-router-dom";
 
 import Content from "./Content";
 import Category from "./Categories";
-import { options } from "../../admin/components/data.ts";
-import { useMenu } from "../../MenuProvider";
+import { options } from "../pages/admin/components/data.ts";
+import { useMenu } from "../utils/MenuProvider.tsx";
 
 function Header() {
   const location = useLocation();

@@ -8,7 +8,7 @@ function DishDetails() {
 
   useEffect(() => {
     if (!nombre) return;
-    const apiUrl = `http://localhost:3000/getDish/${nombre}`;
+    const apiUrl = `http://192.168.0.10:3000/api/getDish/${nombre}`;
     async function fetchDish() {
       try {
         const res = await fetch(apiUrl);

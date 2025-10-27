@@ -4,6 +4,7 @@ export type Dish = {
   description: string;
   link: string;
   id_categoria: number;
+  imagen: string;
 };
 
 export type dishDetails = {

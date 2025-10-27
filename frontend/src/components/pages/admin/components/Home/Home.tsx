@@ -2,7 +2,7 @@ import { useLocation } from "react-router-dom";
 //import { dishes } from "../../../components/Main/data";
 
 import "./Home.css";
-import RenderDish from "../../../components/Main/RenderDish";
+import RenderDish from "../../../../Main/RenderDish";
 
 function Home() {
   const location = useLocation();

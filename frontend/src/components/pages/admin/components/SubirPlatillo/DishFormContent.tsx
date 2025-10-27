@@ -1,4 +1,4 @@
-import type { UploadDishFormContentProps } from "../../../components/Main/type.ts";
+import type { UploadDishFormContentProps } from "../../../../Main/type.ts";
 
 function DishFormContent({
   platillo,
@@ -20,6 +20,7 @@ function DishFormContent({
       setPlatillo((prev) => ({ ...prev, [name]: value }));
     }
   };
+
   return (
     <>
       <input
@@ -45,12 +46,12 @@ function DishFormContent({
         placeholder="Escribe aquí las instrucciones del platillo"
       />
       <div className="file-category">
-        {/* <input 
-                    type="file"
-                    name="imagen"
-                    accept="image/*"
-                    onChange={handleChange}
-                /> */}
+        <input
+          type="file"
+          name="imagen"
+          accept="image/*"
+          onChange={handleChange}
+        />
         <select
           name="categoria"
           value={platillo.id_categoria}

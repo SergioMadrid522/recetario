@@ -549,6 +549,206 @@ header nav.onlyLogo {
   word-wrap: break-word;
 }
 
+.edit-dish-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.95);
+  background-color: #fff;
+  opacity: 1;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+  width: 90%;
+  max-width: 700px;
+  height: auto;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 14px;
+  padding: 25px 20px;
+  z-index: 2001;
+  transition: all 0.3s ease;
+  font-family: "Montserrat", sans-serif;
+  color: #333;
+}
+.edit-dish-modal::-webkit-scrollbar {
+  width: 6px;
+}
+.edit-dish-modal::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+}
+.edit-dish-modal .edit-modal-main {
+  padding: 1.5em 1.2em;
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+}
+.edit-dish-modal .edit-modal-main form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  margin-top: 1.5em;
+}
+.edit-dish-modal .edit-modal-main form input[type=file] {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0.6em 1em;
+  background-color: #fafafa;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.95rem;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.edit-dish-modal .edit-modal-main form input[type=file]::file-selector-button {
+  background-color: #f8b500;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  padding: 0.6em 1.2em;
+  margin-right: 1em;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.edit-dish-modal .edit-modal-main form input[type=file]::file-selector-button:hover {
+  background-color: #e4a700;
+  transform: translateY(-1px);
+}
+.edit-dish-modal .edit-modal-main form input[type=file]::file-selector-button:active {
+  background-color: #cc9600;
+  transform: translateY(1px);
+}
+.edit-dish-modal .edit-modal-main form input[type=file]:hover {
+  background-color: #f0f4ff;
+  border-color: #a5b9ff;
+}
+.edit-dish-modal .edit-modal-main form input[type=file]:focus {
+  outline: none;
+  border-color: #033e72;
+  box-shadow: 0 0 6px rgba(3, 62, 114, 0.3);
+}
+.edit-dish-modal .edit-modal-main form input[type=text],
+.edit-dish-modal .edit-modal-main form textarea,
+.edit-dish-modal .edit-modal-main form select {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.75em 1em;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+.edit-dish-modal .edit-modal-main form input[type=text]:focus,
+.edit-dish-modal .edit-modal-main form textarea:focus,
+.edit-dish-modal .edit-modal-main form select:focus {
+  outline: none;
+  border-color: #033e72;
+  box-shadow: 0 0 6px rgba(3, 62, 114, 0.4);
+  background-color: #f9fbff;
+}
+.edit-dish-modal .edit-modal-main form textarea {
+  min-height: 10em;
+  resize: vertical;
+}
+.edit-dish-modal .edit-modal-main form textarea:last-of-type {
+  min-height: 20em;
+}
+.edit-dish-modal .edit-modal-main form .file-category {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
+}
+.edit-dish-modal .edit-modal-main form .file-category input[type=file] {
+  cursor: pointer;
+  width: 100%;
+  max-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0.5em;
+  background-color: #fafafa;
+  transition: background-color 0.3s ease;
+}
+.edit-dish-modal .edit-modal-main form .file-category input[type=file]:hover {
+  background-color: #f0f4ff;
+}
+.edit-dish-modal .edit-modal-main form .file-category select {
+  flex-grow: 1;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0.6em 1em;
+  font-size: 1rem;
+  background-color: #fff;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+.edit-dish-modal .edit-modal-main form .file-category select option {
+  text-align: center;
+}
+.edit-dish-modal .edit-modal-main form .file-category select:focus {
+  outline: none;
+  border-color: #033e72;
+  box-shadow: 0 0 5px rgba(3, 62, 114, 0.4);
+}
+.edit-dish-modal .edit-modal-main form .submit-button {
+  text-align: center;
+}
+.edit-dish-modal .edit-modal-main form .submit-button button[type=submit] {
+  background-color: #f8b500;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.9em 2em;
+  width: 220px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.edit-dish-modal .edit-modal-main form .submit-button button[type=submit]:hover {
+  background-color: #e4a700;
+  transform: translateY(-2px);
+}
+.edit-dish-modal .edit-modal-main form .submit-button button[type=submit]:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(3, 62, 114, 0.5);
+}
+.edit-dish-modal .close-modal {
+  position: absolute;
+  top: 30px;
+  right: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.edit-dish-modal .close-modal:hover {
+  transform: scale(1.15);
+}
+.edit-dish-modal .close-modal svg {
+  width: 28px;
+  height: 28px;
+  fill: #555;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+}
+
 footer {
   border-top: 1px solid gainsboro;
   background-color: #f9f9f9;
@@ -773,10 +973,10 @@ footer .first-section {
     top: 0;
   }
   header nav {
+    position: sticky;
     display: flex;
     justify-content: space-between;
     padding: 0.8em;
-    position: relative;
   }
   header nav .search-wrap .search-icon {
     display: none;
@@ -871,6 +1071,9 @@ footer .first-section {
   main .dish-wrap .dish-container:hover {
     box-shadow: none;
     transform: none;
+  }
+  main .dish-wrap .content-not-found {
+    text-align: center;
   }
   .dish-details__title {
     width: 100%;

@@ -1,11 +1,10 @@
+/* libraries */
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-/* Types */
+/* types */
 import type { Dish } from "./type.ts";
-/* Components */
+/* components */
 import AdminBtns from "./AdminBtns";
-/* Data */
-import { dishImages } from "./data.ts";
 
 type RenderDishProps = {
   dishes?: Dish[];
@@ -16,7 +15,7 @@ function RenderDish({ dishes }: RenderDishProps) {
   const location = useLocation();
   const hideAdminBtns = location.pathname === "/admin/home";
   const [data, setData] = useState<Dish[] | null>(dishes || null);
-  const apiUrl = "http://localhost:3000/getDishes";
+  const apiUrl = "http://192.168.0.10:3000/api/getDishes";
 
   useEffect(() => {
     if (!dishes) {
@@ -36,14 +35,17 @@ function RenderDish({ dishes }: RenderDishProps) {
     }
   }, [dishes]);
 
-  if (!data) return <p>Cargando...</p>;
+  if (!data) return <p className="loading-content">Cargando...</p>;
   if (data.length === 0)
-    return <p>No tienes ningún platillo para mostrar :(</p>;
+    return (
+      <p className="content-not-found">
+        No tienes ningún platillo para mostrar :(
+      </p>
+    );
 
   return (
     <>
       {data.map((dish, idx) => {
-        const image = dishImages[idx % dishImages.length];
         return (
           <article className="dish-container" key={dish.id_platillo || idx}>
             <div className="dish-container__card">
@@ -52,7 +54,7 @@ function RenderDish({ dishes }: RenderDishProps) {
                 rel="noopener noreferrer"
               >
                 <div className="image-container">
-                  <img src={image.img} alt={dish.nombre} />
+                  <img src={dish.imagen} alt={dish.nombre} />
                 </div>
                 <h2>{dish.nombre}</h2>
               </Link>

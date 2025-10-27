@@ -1,3 +1,6 @@
+.error-alert {
+  z-index: 9999999 !important;
+}
 .error-alert__popup {
   border-radius: 12px;
   padding: 25px 20px;
@@ -40,6 +43,9 @@
   outline: none;
 }
 
+.success-alert {
+  z-index: 9999999 !important;
+}
 .success-alert__popup {
   border-radius: 12px;
   padding: 25px 20px;
@@ -65,6 +71,9 @@
   margin-bottom: 10px;
 }
 
+.delete-alert {
+  z-index: 9999999 !important;
+}
 .delete-alert__popup {
   border-radius: 12px;
   padding: 25px 20px;

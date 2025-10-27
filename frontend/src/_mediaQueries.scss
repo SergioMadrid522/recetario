@@ -147,10 +147,11 @@
     position: sticky;
     top: 0;
     nav {
+      position: sticky;
       display: flex;
       justify-content: space-between;
       padding: 0.8em;
-      position: relative;
+
       .search-wrap {
         .search-icon {
           display: none;
@@ -241,6 +242,7 @@
       padding: 15px 10px;
       gap: 15px;
       justify-items: center;
+
       .dish-container {
         width: 90%;
         a {
@@ -252,6 +254,9 @@
           box-shadow: none;
           transform: none;
         }
+      }
+      .content-not-found {
+        text-align: center;
       }
     }
   }

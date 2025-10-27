@@ -11,6 +11,7 @@ function SideMenu({ open, toggleOpen }: sideMenuProps) {
         <h2 className="main-titles" id="inicio">
           Bienvenida!
         </h2>
+
         {sideMenuOptions.map((option, idx) => (
           <div className="side-menu__option-container" key={idx}>
             <NavLink

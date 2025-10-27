@@ -2,7 +2,7 @@
 export async function deleteDishApi(id_platillo: number) {
   try {
     const res = await fetch(
-      `http://localhost:3000/deleteDish/${id_platillo}`, // 👈 Asegúrate de que el puerto y ruta coincidan
+      `http://192.168.0.10:3000/deleteDish/${id_platillo}`, // 👈 Asegúrate de que el puerto y ruta coincidan
       {
         method: "DELETE",
         headers: {

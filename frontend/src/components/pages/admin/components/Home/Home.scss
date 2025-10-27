@@ -11,7 +11,7 @@
     font-size: 1.8rem;
     margin-bottom: 2em;
     color: #222;
-    text-align: left; // en admin queda mejor alineado a la izquierda
+    text-align: left;
     border-bottom: 2px solid #f8b500;
     padding-bottom: 0.5em;
   }
@@ -32,12 +32,11 @@
 
       &:hover {
         border-color: #f8b500;
-        transform: translateY(-3px);
       }
 
       .image-container {
         width: 100%;
-        aspect-ratio: 1/1; // cuadrada para consistencia
+        aspect-ratio: 1/1;
         overflow: hidden;
         border-radius: 6px;
         margin-bottom: 1em;

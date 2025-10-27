@@ -121,7 +121,6 @@
 }
 .home-wrap .item-container .dish-container:hover {
   border-color: #f8b500;
-  transform: translateY(-3px);
 }
 .home-wrap .item-container .dish-container .image-container {
   width: 100%;

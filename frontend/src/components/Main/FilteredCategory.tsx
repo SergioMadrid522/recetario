@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import RenderDish from "./RenderDish.tsx";
 
 import type { Dish } from "./type.ts";
-import { options } from "../../admin/components/data.ts";
+import { options } from "../pages/admin/components/data.ts";
 
 function FilteredCategory() {
   const { categoryId } = useParams<{ categoryId: string }>();
@@ -16,7 +16,7 @@ function FilteredCategory() {
   useEffect(() => {
     async function fetchDishes() {
       try {
-        const res = await fetch("http://localhost:3000/getDishes");
+        const res = await fetch("http://192.168.0.10:3000/api/getDishes");
         const data = await res.json();
         const filtered = data.dishes.filter(
           (dish: Dish) => dish.id_categoria === Number(categoryId)
