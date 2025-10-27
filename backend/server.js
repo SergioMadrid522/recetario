@@ -7,9 +7,12 @@ import http from "http";
 import adminRoutes from "./routes/admin.route.js";
 import dishRoutes from "./routes/dish.route.js";
 
-const port = process.env.SERVER_PORT || 3001;
-const allowedOrigins = ["http://localhost:5173", "http://192.168.0.3:5173"];
-
+const port = process.env.PORT || 3001;
+/* const allowedOrigins = [
+  "http://localhost:5173", // dev en PC
+  "http://192.168.0.10:5173", // dev en PC desde otra máquina
+  "http://192.168.0.10", // móvil accediendo al backend];
+];
 const corsOptions = {
   origin: function (origin, callback) {
     if (!origin || allowedOrigins.includes(origin)) {
@@ -21,17 +24,18 @@ const corsOptions = {
   methods: "GET, POST, PUT, DELETE",
   optionsSuccessStatus: 200,
   credentials: true,
-};
+}; */
 
 const app = express();
 
-app.use(cors(corsOptions));
+app.use(cors({ origin: "*" }));
 app.use(express.json());
 
-app.use("/", adminRoutes);
-app.use("/", dishRoutes);
+app.use("/api", adminRoutes);
+app.use("/api", dishRoutes);
 
+//app.use(cors(corsOptions));
 const server = http.createServer(app);
-server.listen(port, "0.0.0.0", () => {
+server.listen(port, () => {
   console.log(`Server running in http://localhost:${port}`);
 });
