@@ -13,7 +13,7 @@ export function DishesProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     async function fetchData() {
       try {
-        const res = await fetch("http://192.168.0.10:3000/getDishes");
+        const res = await fetch("http://192.168.0.10:3001/api/getDishes");
         if (!res.ok) {
           throw new Error(
             `Error en la petición: ${res.status} ${res.statusText}`

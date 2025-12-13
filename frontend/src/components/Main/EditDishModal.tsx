@@ -1,35 +1,35 @@
-/* libraries */
 import { useState } from "react";
-
-/* data */
 import { options } from "../pages/admin/components/data.ts";
+import type { EditDishModalProps } from "./type.ts";
 import { ErrorAlert, SuccessAlert } from "../utils/Alerts/Alerts.ts";
-/* componets */
-import DishFormContent from "../pages/admin/components/SubirPlatillo/DishFormContent";
+import { EditDishModalContent } from "./EditDishModalContent.tsx";
 
-function UploadDish() {
+export function EditDishModal({ dish }: EditDishModalProps) {
+  const { nombre, ingredientes, instrucciones, imagen, id_categoria } = dish;
   const CLOUDINARY_URL = import.meta.env.VITE_CLOUDINARY_URL;
   const UPLOAD_PRESET = import.meta.env.VITE_UPLOAD_PRESET;
 
+  const { id_platillo } = dish;
+
   const [platillo, setPlatillo] = useState({
-    nombre: "",
-    ingredientes: "",
-    instrucciones: "",
-    imagen: null as File | null,
-    id_categoria: options[0].id,
+    nombre: nombre,
+    ingredientes: ingredientes,
+    instrucciones: instrucciones,
+    imagen: imagen,
+    id_categoria: id_categoria,
   });
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    const apiURL = "http://192.168.0.10:3001/api/agregarPlatillo";
+    const apiURL = "http://192.168.0.10:3001/api/modifyDishDetails";
     const { nombre, ingredientes, instrucciones, id_categoria, imagen } =
       platillo;
     try {
-      let imageUrl = "";
+      let imageUrl = imagen;
 
-      if (imagen) {
+      if (imagen instanceof File) {
         const formData = new FormData();
         formData.append("file", imagen);
         formData.append("upload_preset", UPLOAD_PRESET);
@@ -43,15 +43,17 @@ function UploadDish() {
 
         if (!cloudRes.ok)
           throw new Error(cloudData.error?.message || "Error al subir imagen");
+
         imageUrl = cloudData.secure_url;
       }
 
       const res = await fetch(apiURL, {
-        method: "POST",
+        method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
+          id_platillo: id_platillo,
           nombre: nombre,
           ingredientes: ingredientes,
           instrucciones: instrucciones,
@@ -75,12 +77,13 @@ function UploadDish() {
       SuccessAlert(message);
 
       setPlatillo({
-        nombre: "",
-        ingredientes: "",
-        instrucciones: "",
-        imagen: null,
+        nombre: nombre,
+        ingredientes: ingredientes,
+        instrucciones: instrucciones,
+        imagen: imageUrl,
         id_categoria: id,
       });
+      console.log(platillo);
     } catch (error: unknown) {
       if (error instanceof Error) {
         ErrorAlert(error);
@@ -92,14 +95,13 @@ function UploadDish() {
       setLoading(false);
     }
   };
-
   return (
     <>
-      <div className="main-wrapper">
-        <h2 className="main-titles">Subir platillo</h2>
+      <div className="edit-modal-main">
+        <h2 className="main-titles">Modificar platillo</h2>
 
         <form onSubmit={handleSubmit} autoComplete="off">
-          <DishFormContent
+          <EditDishModalContent
             platillo={platillo}
             setPlatillo={setPlatillo}
             options={options}
@@ -110,5 +112,3 @@ function UploadDish() {
     </>
   );
 }
-
-export default UploadDish;

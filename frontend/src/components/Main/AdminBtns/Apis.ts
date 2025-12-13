@@ -1,25 +1,25 @@
-// Apis.ts
 export async function deleteDishApi(id_platillo: number) {
+  console.log(id_platillo);
   try {
-    const res = await fetch(
-      `http://192.168.0.10:3000/deleteDish/${id_platillo}`, // 👈 Asegúrate de que el puerto y ruta coincidan
-      {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const res = await fetch(`http://192.168.0.10:3001/api/deleteDish`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        id_platillo: id_platillo,
+      }),
+    });
 
     if (!res.ok) {
-      // Si no es 200 o 201, lanzo error
       const errorData = await res.json();
-      throw new Error(errorData.error || "No se pudo eliminar el platillo");
+      const { message } = errorData;
+      throw new Error(message);
     }
 
-    return true; // Eliminación exitosa
+    return true;
   } catch (error) {
     console.error("Error en deleteDishApi:", error);
-    return false; // Para que tu Swal dispare el "No se pudo eliminar"
+    return false;
   }
 }

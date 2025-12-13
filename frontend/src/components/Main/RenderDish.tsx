@@ -14,56 +14,59 @@ type RenderDishProps = {
 function RenderDish({ dishes }: RenderDishProps) {
   const location = useLocation();
   const hideAdminBtns = location.pathname === "/admin/home";
-  const [data, setData] = useState<Dish[] | null>(dishes || null);
-  const apiUrl = "http://192.168.0.10:3000/api/getDishes";
+  const [dishesData, setDishesData] = useState<Dish[] | null>(dishes || null);
+
+  const apiUrl = "http://192.168.0.10:3001/api/getDishes";
 
   useEffect(() => {
     if (!dishes) {
       async function fetchData() {
         try {
           const res = await fetch(apiUrl);
+
           if (!res.ok) throw new Error("Error al cargar el platillo");
-          const result = await res.json();
-          setData(result.dishes || []);
+
+          const data = await res.json();
+          const { dishes } = data;
+          setDishesData(dishes);
         } catch (error) {
           console.error("Error fetching dishes:", error);
         }
       }
       fetchData();
     } else {
-      setData(dishes);
+      setDishesData(dishes);
     }
   }, [dishes]);
 
-  if (!data) return <p className="loading-content">Cargando...</p>;
-  if (data.length === 0)
+  if (!dishesData) return <p className="loading-content">Cargando...</p>;
+  if (dishesData.length === 0) {
     return (
       <p className="content-not-found">
         No tienes ningún platillo para mostrar :(
       </p>
     );
-
+  }
   return (
     <>
-      {data.map((dish, idx) => {
+      {dishesData.map((dish) => {
+        const { id_platillo, nombre, imagen } = dish;
+
         return (
-          <article className="dish-container" key={dish.id_platillo || idx}>
+          <article className="dish-container" key={id_platillo}>
             <div className="dish-container__card">
-              <Link
-                to={`/menu/platillo/${dish.nombre}`}
-                rel="noopener noreferrer"
-              >
+              <Link to={`/menu/platillo/${nombre}`}>
                 <div className="image-container">
-                  <img src={dish.imagen} alt={dish.nombre} />
+                  <img
+                    src={typeof imagen === "string" ? imagen : ""}
+                    alt={nombre}
+                  />
                 </div>
-                <h2>{dish.nombre}</h2>
+                <h2>{nombre}</h2>
               </Link>
             </div>
 
-            {/* Admin Btns */}
-            {hideAdminBtns && (
-              <AdminBtns dishName={dish.nombre} dishId={dish.id_platillo} />
-            )}
+            {hideAdminBtns && <AdminBtns dish={dish} />}
           </article>
         );
       })}

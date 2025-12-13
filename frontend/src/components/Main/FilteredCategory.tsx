@@ -16,7 +16,7 @@ function FilteredCategory() {
   useEffect(() => {
     async function fetchDishes() {
       try {
-        const res = await fetch("http://192.168.0.10:3000/api/getDishes");
+        const res = await fetch("http://192.168.0.10:3001/api/getDishes");
         const data = await res.json();
         const filtered = data.dishes.filter(
           (dish: Dish) => dish.id_categoria === Number(categoryId)

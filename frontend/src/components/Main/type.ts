@@ -1,11 +1,11 @@
-export type Dish = {
+export interface Dish {
   id_platillo: number;
   nombre: string;
-  description: string;
-  link: string;
+  ingredientes: string;
+  instrucciones: string;
+  imagen: string | File | null;
   id_categoria: number;
-  imagen: string;
-};
+}
 
 export type dishDetails = {
   nombre: string;
@@ -13,7 +13,7 @@ export type dishDetails = {
   instrucciones: string;
 };
 
-type Category = {
+export type Category = {
   id: number;
   name: string;
 };
@@ -23,7 +23,7 @@ export type UploadDishFormContentProps = {
     nombre: string;
     ingredientes: string;
     instrucciones: string;
-    imagen: File | null;
+    imagen: string | File | null;
     id_categoria: number;
   };
   setPlatillo: React.Dispatch<
@@ -31,21 +31,34 @@ export type UploadDishFormContentProps = {
       nombre: string;
       ingredientes: string;
       instrucciones: string;
-      imagen: File | null;
+      imagen: string | File | null;
       id_categoria: number;
     }>
   >;
   options: Category[];
+  loading: boolean;
 };
 
-export type AdminBtnsProps = {
-  dishName: string;
-  dishId: number;
+export interface AdminBtnsProps {
+  onDeleted?: () => void;
+  dish: Dish;
+}
+
+export type DeleteBtnProps = {
+  nombre: string;
+  id_platillo: number;
   onDeleted?: () => void;
 };
 
-export type deleteBtnProps = {
-  dishName: string;
-  dishId: number;
-  onDeleted?: () => void;
+export type EditModalProps = {
+  setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
+  dish: Dish;
+};
+
+export type UploadDishProps = {
+  dishesData: Dish;
+};
+
+export type EditDishModalProps = {
+  dish: Dish;
 };

@@ -1,14 +1,15 @@
 import Swal from "sweetalert2";
 import { deleteDishApi } from "./Apis";
+import type { DeleteBtnProps } from "../type";
 
-export function DeleteDishButton(
-  dishName: string,
-  dishId: number,
-  onDeleted?: () => void
-) {
+export function DeleteDishButton({
+  nombre,
+  id_platillo,
+  onDeleted,
+}: DeleteBtnProps) {
   Swal.fire({
     title: "¿Estás seguro?",
-    html: `Estás a punto de borrar el platillo <strong>${dishName}</strong>`,
+    html: `Estás a punto de borrar el platillo <strong>${nombre}</strong>`,
     icon: "warning",
     showCancelButton: true,
     confirmButtonText: "Sí, lo quiero borrar",
@@ -23,12 +24,12 @@ export function DeleteDishButton(
     buttonsStyling: false,
   }).then(async (result) => {
     if (result.isConfirmed) {
-      const success = await deleteDishApi(dishId);
+      const success = await deleteDishApi(id_platillo);
       if (success) {
-        onDeleted?.(); // actualiza la UI
+        onDeleted?.();
         Swal.fire({
           icon: "success",
-          html: `El platillo <strong>${dishName}</strong> se eliminó correctamente`,
+          html: `El platillo <strong>${nombre}</strong> se eliminó correctamente`,
           timer: 1500,
           showConfirmButton: false,
           customClass: {

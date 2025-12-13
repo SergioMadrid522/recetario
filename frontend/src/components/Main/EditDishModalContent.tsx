@@ -1,6 +1,6 @@
-import type { UploadDishFormContentProps } from "../../../../Main/type.ts";
+import type { UploadDishFormContentProps } from "./type.ts";
 
-function DishFormContent({
+export function EditDishModalContent({
   platillo,
   setPlatillo,
   options,
@@ -64,11 +64,9 @@ function DishFormContent({
       </div>
       <div className="submit-button">
         <button type="submit">
-          {loading ? "Subiendo platillo..." : "Subir Platillo"}
+          {loading ? "Actualizando platillo..." : "Actualizar Platillo"}
         </button>
       </div>
     </>
   );
 }
-
-export default DishFormContent;

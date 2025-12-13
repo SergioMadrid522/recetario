@@ -12,8 +12,8 @@ import Home from "./components/pages/admin/components/Home/Home";
 import AdminLayout from "./components/pages/admin/components/Admin-Layout/AdminLayout";
 import FilteredCategory from "./components/Main/FilteredCategory";
 import DishDetails from "./components/Main/DishDetails";
-import { MenuProvider } from "./components/utils/MenuProvider";
 import ScrollToTop from "./components/utils/ScrollToTop";
+import { MenuProvider } from "./components/utils/MenuProvider";
 import { DishesProvider } from "./components/utils/DishContext";
 import { ModalProvider } from "./components/utils/ModalProvider";
 function App() {
