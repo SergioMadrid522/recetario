@@ -8,12 +8,12 @@ import adminRoutes from "./routes/admin.route.js";
 import dishRoutes from "./routes/dish.route.js";
 
 const port = process.env.PORT || 3001;
-/* const allowedOrigins = [
+const allowedOrigins = [
   "http://localhost:5173", // dev en PC
   "http://192.168.0.10:5173", // dev en PC desde otra máquina
-  "http://192.168.0.10", // móvil accediendo al backend];
+  "http://192.168.0.10", // móvil accediendo al backend;
 ];
-const corsOptions = {
+/* const corsOptions = {
   origin: function (origin, callback) {
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
