@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import type { dishDetails } from "./type.ts";
+import type { DishesDetails } from "../../data.types";
 
-function DishDetails() {
+export default function DishDetails() {
   const { nombre } = useParams<{ nombre: string }>();
-  const [dish, setDish] = useState<dishDetails | null>(null);
+  const [dish, setDish] = useState<DishesDetails | null>(null);
 
   useEffect(() => {
     if (!nombre) return;
-    const apiUrl = `http://192.168.0.10:3001/api/getDish/${nombre}`;
+    const apiUrl = `${import.meta.env.VITE_GET_DISH_URL}/${nombre}`;
     async function fetchDish() {
       try {
         const res = await fetch(apiUrl);
@@ -59,4 +59,3 @@ function DishDetails() {
     </div>
   );
 }
-export default DishDetails;

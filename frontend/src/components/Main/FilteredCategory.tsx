@@ -1,9 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import RenderDish from "./RenderDish.tsx";
-
-import type { Dish } from "./type.ts";
-import { options } from "../pages/admin/components/data.ts";
+import RenderDish from "./content/RenderDish.tsx";
+import type { Dish } from "../../data.types.ts";
+import { options } from "../../data.ts";
 
 function FilteredCategory() {
   const { categoryId } = useParams<{ categoryId: string }>();
@@ -15,8 +14,9 @@ function FilteredCategory() {
 
   useEffect(() => {
     async function fetchDishes() {
+      const apiUrl = import.meta.env.VITE_GET_ALL_DISHES_URL;
       try {
-        const res = await fetch("http://192.168.0.10:3001/api/getDishes");
+        const res = await fetch(apiUrl);
         const data = await res.json();
         const filtered = data.dishes.filter(
           (dish: Dish) => dish.id_categoria === Number(categoryId)

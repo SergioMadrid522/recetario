@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  backend:
+    build: ./backend
+    container_name: my-backend
+    ports:
+      - "3000:3000" # tu backend corre en el 3000
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./backend:/app # opcional si quieres hot-reload en dev
+
+  frontend:
+    build: ./frontend
+    container_name: my-frontend
+    ports:
+      - "80:80" # accedes a la app en localhost:80
+    depends_on:
+      - backend

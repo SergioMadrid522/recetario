@@ -24,7 +24,8 @@ header nav .search-wrap {
   font-family: "Montserrat", sans-serif;
   font-weight: 300;
 }
-header nav .search-wrap__open-modal {
+header nav .search-wrap__open-modal-btn {
+  background-color: transparent;
   color: rgb(46, 45, 45);
   cursor: pointer;
   border: 1.5px solid transparent;
@@ -34,7 +35,7 @@ header nav .search-wrap__open-modal {
   gap: 8px;
   font-size: 14px;
 }
-header nav .search-wrap__open-modal .search-icon {
+header nav .search-wrap__open-modal-btn .search-icon {
   display: inherit;
   width: 19px;
   fill: #555;

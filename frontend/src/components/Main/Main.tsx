@@ -1,13 +1,11 @@
 import Content from "./Content";
-//import Filter from "./Filter";
 
 function Main() {
-    return (
-        <main>
-            {/* <Filter/> */}
-            <Content/>
-        </main>
-    );
+  return (
+    <main>
+      <Content />
+    </main>
+  );
 }
 
 export default Main;

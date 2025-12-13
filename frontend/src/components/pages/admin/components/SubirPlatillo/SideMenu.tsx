@@ -1,10 +1,8 @@
 import { NavLink } from "react-router-dom";
-import { sideMenuOptions } from "../data.ts";
-type sideMenuProps = {
-  open: boolean;
-  toggleOpen: () => void;
-};
-function SideMenu({ open, toggleOpen }: sideMenuProps) {
+import { sideMenuOptions } from "../../../../../data";
+import type { SideMenuProps } from "../../../../../data.types.ts";
+
+export default function SideMenu({ open, toggleOpen }: SideMenuProps) {
   return (
     <>
       <aside className={`side-menu ${open ? "active" : ""}`}>
@@ -12,14 +10,10 @@ function SideMenu({ open, toggleOpen }: sideMenuProps) {
           Bienvenida!
         </h2>
 
-        {sideMenuOptions.map((option, idx) => (
+        {sideMenuOptions.map(({ link, optionName }, idx) => (
           <div className="side-menu__option-container" key={idx}>
-            <NavLink
-              to={`/${option.link}`}
-              className="option"
-              onClick={toggleOpen}
-            >
-              {option.optionName}
+            <NavLink to={`/${link}`} className="option" onClick={toggleOpen}>
+              {optionName}
             </NavLink>
           </div>
         ))}
@@ -27,5 +21,3 @@ function SideMenu({ open, toggleOpen }: sideMenuProps) {
     </>
   );
 }
-
-export default SideMenu;

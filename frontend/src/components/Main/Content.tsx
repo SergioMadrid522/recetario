@@ -1,6 +1,6 @@
-import RenderDish from "./RenderDish";
+import RenderDish from "./content/RenderDish";
 
-function Content() {
+export default function Content() {
   return (
     <>
       <h2 className="menu-title" id="inicio">
@@ -13,5 +13,3 @@ function Content() {
     </>
   );
 }
-
-export default Content;

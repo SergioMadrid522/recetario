@@ -1,6 +1,6 @@
-import type { UploadDishFormContentProps } from "../../../../../data.types";
+import type { UploadDishFormContentProps } from "../../../data.types";
 
-function DishFormContent({
+export default function EditDishContent({
   platillo,
   setPlatillo,
   options,
@@ -66,13 +66,12 @@ function DishFormContent({
           ))}
         </select>
       </div>
+
       <div className="submit-button">
         <button type="submit">
-          {loading ? "Subiendo platillo..." : "Subir Platillo"}
+          {loading ? "Actualizando platillo..." : "Actualizar Platillo"}
         </button>
       </div>
     </>
   );
 }
-
-export default DishFormContent;
