@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import type { Categories } from "../../data.types.ts";
+import type { Categories } from "../../data.type.ts";
 
-function Categories({ category, onSelect }: Categories) {
+export default function Categories({ category, onSelect }: Categories) {
   return (
     <ul className="category-list">
       <h2>Categorias</h2>
@@ -16,5 +16,3 @@ function Categories({ category, onSelect }: Categories) {
     </ul>
   );
 }
-
-export default Categories;

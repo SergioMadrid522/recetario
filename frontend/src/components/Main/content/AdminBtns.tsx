@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { DeleteDishButton } from "./adminBtns/DeleteDishButton.ts";
 import Modal from "./Modal";
-import type { AdminBtnsProps } from "../../../data.types.ts";
+import type { AdminBtnsProps } from "../../../data.type.ts";
 
 export default function AdminBtns({ dish, onDeleted }: AdminBtnsProps) {
   const [openModal, setOpenModal] = useState(false);

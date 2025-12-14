@@ -1,4 +1,4 @@
-import type { UploadDishFormContentProps } from "../../../data.types";
+import type { UploadDishFormContentProps } from "../../../data.type";
 
 export default function EditDishContent({
   platillo,

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ErrorAlert, SuccessAlert } from "../../utils/Alerts/Alerts.ts";
-import type { EditDishModalProps } from "../../../data.types.ts";
+import type { EditDishModalProps } from "../../../data.type.ts";
 import { options } from "../../../data.ts";
 import EditDishContent from "./EditDishContent.tsx";
 

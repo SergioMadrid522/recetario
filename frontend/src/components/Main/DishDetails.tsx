@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import type { DishesDetails } from "../../data.types";
+import type { DishesDetails } from "../../data.type";
 
 export default function DishDetails() {
   const { nombre } = useParams<{ nombre: string }>();

@@ -3,7 +3,6 @@ import { GLOBAL, options } from "../../data.ts";
 import { useMenu } from "../utils/MenuProvider";
 import Content from "./Content";
 import Category from "./Categories";
-
 function Header() {
   const location = useLocation();
   const { open, setOpen } = useMenu();

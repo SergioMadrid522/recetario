@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import RenderDish from "./content/RenderDish.tsx";
-import type { Dish } from "../../data.types.ts";
+import type { Dish } from "../../data.type.ts";
 import { options } from "../../data.ts";
 
 function FilteredCategory() {

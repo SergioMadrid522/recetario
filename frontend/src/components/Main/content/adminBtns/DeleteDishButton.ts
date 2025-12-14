@@ -1,5 +1,5 @@
 import Swal from "sweetalert2";
-import type { DeleteBtnProps } from "../../../../data.types";
+import type { DeleteBtnProps } from "../../../../data.type";
 import { deleteDishApi } from "./Apis";
 
 export function DeleteDishButton({

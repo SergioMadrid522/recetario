@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import AdminBtns from "./AdminBtns.tsx";
-import type { Dish, RenderDishProps } from "../../../data.types.ts";
+import type { Dish, RenderDishProps } from "../../../data.type.ts";
 
 export default function RenderDish({ dishes }: RenderDishProps) {
   const apiUrl = import.meta.env.VITE_GET_ALL_DISHES_URL;
   const location = useLocation();
   const hideAdminBtns = location.pathname === "/admin/home";
   const [dishesData, setDishesData] = useState<Dish[] | null>(dishes || null);
-
+  console.log(apiUrl);
   useEffect(() => {
     if (!dishes) {
       async function fetchData() {

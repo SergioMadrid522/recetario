@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import type { Dish } from "../Main/type.ts";
+import type { Dish } from "../../data.type";
 
 type DishesContextType = {
   dishes: Dish[];
@@ -12,8 +12,9 @@ export function DishesProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     async function fetchData() {
+      const apiUrl = import.meta.env.VITE_GET_ALL_DISHES_URL;
       try {
-        const res = await fetch("http://192.168.0.10:3001/api/dish/getAll");
+        const res = await fetch(apiUrl);
         if (!res.ok) {
           throw new Error(
             `Error en la petición: ${res.status} ${res.statusText}`

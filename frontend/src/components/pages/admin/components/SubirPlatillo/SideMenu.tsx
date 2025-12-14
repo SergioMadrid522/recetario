@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { sideMenuOptions } from "../../../../../data";
-import type { SideMenuProps } from "../../../../../data.types.ts";
+import type { SideMenuProps } from "../../../../../data.type.ts";
 
 export default function SideMenu({ open, toggleOpen }: SideMenuProps) {
   return (

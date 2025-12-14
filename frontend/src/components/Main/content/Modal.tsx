@@ -1,4 +1,4 @@
-import type { ModalProps } from "../../../data.types";
+import type { ModalProps } from "../../../data.type";
 import EditDish from "./EditDish";
 
 export default function Modal({ setOpenModal, dish }: ModalProps) {
