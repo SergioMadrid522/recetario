@@ -36,6 +36,7 @@ export default function RenderDish({ dishes }: RenderDishProps) {
       </p>
     );
   }
+
   return (
     <>
       {dishesData.map((dish) => {

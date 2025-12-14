@@ -11,67 +11,14 @@
   margin-bottom: 20px;
   scroll-margin-top: 100dvh;
 }
-
-/* .dish-wrap {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  padding: 0 20px 40px;
-  .dish-container {
-    background-color: #fff;
-    border: 1px solid gainsboro;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    width: 450px;
-    height: 380px;
-    transition: all 0.3s ease;
-    &:hover {
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-      scale: (1.03);
-    }
-    &__card {
-      font-family: "Montserrat", sans-serif;
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #033e72;
-      a {
-        color: inherit;
-        text-decoration: none;
-        transition: color 0.3s ease;
-        .image-container {
-          width: 100%;
-          height: 90%;
-          overflow: hidden;
-          img {
-            width: 100%;
-            height: 320px;
-            object-fit: cover;
-            object-position: center;
-          }
-        }
-        h2 {
-          text-align: center;
-          padding: 3px;
-        }
-        &:hover {
-          color: #f8b500;
-        }
-      }
-    }
-  }
-} */
-
 .dish-wrap {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 35px;
   padding: 20px 20px 60px;
   justify-items: center;
-
+  width: 70%;
+  margin: 0 auto;
   .dish-container {
     background: #fff;
     border-radius: 12px;

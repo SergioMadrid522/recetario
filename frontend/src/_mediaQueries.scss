@@ -26,11 +26,11 @@
       top: 100%;
       left: 0;
       width: 100%;
-      background: #fff;
+      background-color: #fff;
       text-align: center;
       padding: 0.3em 1.5em;
       opacity: 0;
-      max-height: 0;
+      height: 0;
       overflow: hidden;
       overflow-y: auto;
       transition: all 0.35s ease-out;
@@ -46,7 +46,7 @@
           font-weight: 400;
           font-style: italic;
           text-align: center;
-          padding: 15px 10px;
+          padding: 15px 8px;
           margin-bottom: 20px;
           scroll-margin-top: 100dvh;
         }
@@ -57,7 +57,7 @@
     }
     .active {
       opacity: 1;
-      max-height: 1000px;
+      height: 100%;
     }
     .search-modal {
       width: 100wv;
@@ -99,6 +99,7 @@
       justify-items: center;
       .dish-container {
         width: 90%;
+
         a {
           &:hover {
             color: inherit;
@@ -139,9 +140,6 @@
   }
 }
 
-/* * {
-  outline: 1px solid red;
-} */
 @media screen and (max-width: 767px) {
   header {
     position: sticky;
@@ -238,7 +236,7 @@
   main {
     .dish-wrap {
       width: 100%;
-      grid-template-columns: repeat(2, minmax(200px, 1fr));
+      grid-template-columns: repeat(2, minmax(100px, 1fr));
       padding: 15px 10px;
       gap: 15px;
       justify-items: center;

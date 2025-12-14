@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 const MENU_ITEMS = [
   { label: "Inicio", path: "/" },
   { label: "Subir platillo", path: "/admin/subir-platillo" },
-  { label: "Recetario", path: "/recetario" },
 ];
 
 export default function MenuContent() {
