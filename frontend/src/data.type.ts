@@ -22,7 +22,7 @@ export type Categories = {
   onSelect: () => void;
 };
 
-export type ShowDish = {
+export type ShowDishProps = {
   query: string;
   setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
 };

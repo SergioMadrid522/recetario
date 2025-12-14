@@ -1,8 +1,9 @@
 import { GLOBAL } from "../../../data";
 import { useState } from "react";
-import type { searchModalProps } from "../type";
 import ShowDish from "./ShowDish";
-export default function SearchModal({ open, setOpenModal }: searchModalProps) {
+import type { SearchModalProps } from "../../../data.type.ts";
+
+export default function SearchModal({ open, setOpenModal }: SearchModalProps) {
   const { searchIconSvg, closeIconSvg } = GLOBAL;
   const [query, setQuery] = useState("");
 

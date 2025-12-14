@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { useDishes } from "../../utils/DishContext";
-import type { showDish } from "../type";
+import type { ShowDishProps } from "../../../data.type.ts";
 
-export default function ShowDish({ query, setOpenModal }: showDish) {
+export default function ShowDish({ query, setOpenModal }: ShowDishProps) {
   const { dishes } = useDishes();
 
   if (!dishes.length) {

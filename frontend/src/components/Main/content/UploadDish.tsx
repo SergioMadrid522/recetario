@@ -1,8 +1,6 @@
 /* libraries */
 import { useState } from "react";
-
 /* data */
-
 import { ErrorAlert, SuccessAlert } from "../../utils/Alerts/Alerts.ts";
 /* componets */
 import DishFormContent from "../../pages/admin/components/SubirPlatillo/DishFormContent.tsx";
@@ -16,7 +14,7 @@ function UploadDish() {
     nombre: "",
     ingredientes: "",
     instrucciones: "",
-    imagen: null as File | null,
+    imagen: null as string | File | null,
     id_categoria: options[0].id,
   });
   const [loading, setLoading] = useState(false);
